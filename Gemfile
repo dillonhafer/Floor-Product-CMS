@@ -40,6 +40,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'exception_notification'
+gem 'dynamic_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

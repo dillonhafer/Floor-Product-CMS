@@ -78,4 +78,11 @@ JohnsoniteCom::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  JohnsoniteCom::Application.config.middleware.use ExceptionNotification::Rack,
+  :email => {
+    :email_prefix => "[ERROR] ",
+    :sender_address => %{"Johnsonite Exception" <errors@johnsonite.com>},
+    :exception_recipients => %w{dh@dillonhafer.com}
+  }
 end

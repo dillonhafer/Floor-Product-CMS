@@ -10,8 +10,8 @@ class ProductCategoriesController < ApplicationController
   end
 
   def create
-    product_category = ProductCategory.new product_category_params
-    if product_category.save
+    @product_category = ProductCategory.new product_category_params
+    if @product_category.save
       redirect_to product_categories_path, notice: 'Added product category'
     else
       render 'new'
@@ -23,8 +23,8 @@ class ProductCategoriesController < ApplicationController
   end
 
   def update
-    product_category = ProductCategory.find params[:id]
-    if product_category.update_attributes(product_category_params)
+    @product_category = ProductCategory.find params[:id]
+    if @product_category.update_attributes(product_category_params)
       redirect_to product_categories_path, notice: 'Updated product category'
     else
       render 'edit'
