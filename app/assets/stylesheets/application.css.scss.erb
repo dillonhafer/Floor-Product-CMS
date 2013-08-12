@@ -1,0 +1,89 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require foundation_and_overrides
+ *= require_tree .
+ */
+
+$white: #FFF;
+$light_orange: #dc7c22;
+$dark_orange: #b55a22;
+
+$highlightbackground: #f1de94;
+
+$light_maroon: #874736;
+$dark_maroon: #3d120c;
+
+/*-- Colors Text --*/
+$medium_orange: #c26816;
+$dark_oranges: #3e130d;
+$beige: #e7e2b7;
+$orange: #ec8420;
+
+/*-- Colors Buttons --*/
+$button_top: #e8a555;
+$button_bottom: #d95f10;
+
+body {
+  background: url(<%= asset_path "back.png" %>) !important;
+}
+#main {  
+  padding: 16px !important;
+}
+
+@mixin transition($type: "color"){
+  transition: $type 0.25s ease-in-out; -moz-transition: $type 0.25s ease-in-out; -webkit-transition: $type 0.25s ease-in-out; -o-transition: $type 0.25s ease-in-out;
+}
+
+.top-bar {  margin-bottom: 0 !important;box-shadow: 0 1px 3px #AAA;height:78px;width: 100%;
+  .top-bar-section{ 
+    ul { background:none!important;}
+      li {color:$white;;font-size: 15px;
+      }
+    > ul > .divider {border-right: solid 1px #FFF; border-left: solid 1px black; padding:0;}
+    ul.right a {background:none!important;width:auto!important;float:right;color:white;font-size: 15px;font-weight: normal!important;&:hover{color: #DDD; @include transition(all);}}
+  }
+}
+
+.button {
+  &.blue, & {
+    $color: #CFC9A4; 
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.7);    
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+    border: 1px solid #66b6fc !important;
+    background: -moz-linear-gradient(top, #b2e1ff 0%, #66b6fc);
+    background: -webkit-gradient(linear, left top, left bottom, from(#b2e1ff),to(#66b6fc));
+    
+    &:hover, &:focus {
+      background: -moz-linear-gradient(top, darken(#b2e1ff,7%) 0%, darken(#66b6fc,7%));
+      background: -webkit-gradient(linear, left top, left bottom, from(darken(#b2e1ff,7%)),to(darken(#66b6fc,7%)));
+    }
+  }
+  &.red {
+    $colorA: #eb0e07; 
+    $colorB: #c00802; 
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.7);    
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+    border: 1px solid #904513 !important;
+    background: -moz-linear-gradient(top, $colorA 0%, $colorB);
+    background: -webkit-gradient(linear, left top, left bottom, from($colorA),to($colorB));
+    
+    &.nice {border: 1px solid darken($colorB,10%);}
+    &:hover, &:focus {
+      background: -moz-linear-gradient(top, darken($colorA,7%) 0%, darken($colorB,7%));
+      background: -webkit-gradient(linear, left top, left bottom, from(darken($colorA,7%)),to(darken($colorB,7%)));
+    }
+  }
+}
+.centered {text-align: center;}
+#footer {font-size: 12px;}
