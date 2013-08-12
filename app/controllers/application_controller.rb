@@ -11,7 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_admin
-    redirect_to root_path unless current_user.admin?
+    unless current_user.try(:admin?)
+      sign_out current_user
+      redirect_to(new_user_session_path)
+    end
   end
 
   def configure_permitted_parameters
