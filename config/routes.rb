@@ -2,6 +2,7 @@ JohnsoniteCom::Application.routes.draw do
   devise_for :users, :path => "sessions", :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   
   scope "/admin" do
+    resources :product_families, path: 'product-families'
     resources :product_categories, path: 'product-categories'
 
     resources :users

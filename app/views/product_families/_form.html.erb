@@ -1,0 +1,9 @@
+<%= f.error_messages %>
+<%= f.label :product_category_id %>
+<%= f.select :product_category_id, ProductCategory.all.map {|pc| [pc.name, pc.id]} %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :sample_code %>
+<%= f.text_field :sample_code %>

@@ -1,0 +1,20 @@
+<h1>Product Families</h1>
+
+<hr />
+
+<%= link_to 'New Product Family', new_product_family_path, class: 'blue button nice radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product Category</th><th>Name</th><th>Sample Code</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_families.all.each do |pc| %>
+    <tr>
+      <td><%= pc.product_category.name %></td><td><%= pc.name %></td><td><%= pc.sample_code %></td><td><%= link_to 'edit', edit_product_family_path(pc), class: 'small button radius' %> <%= link_to 'delete', product_family_path(pc), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

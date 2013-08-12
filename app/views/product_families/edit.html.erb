@@ -1,0 +1,8 @@
+<h1>Edit Product Family</h1>
+<hr />
+<%= form_for @product_family do |f| %>
+
+  <%= render partial: 'form', locals: {f: f} %>
+  
+  <%= f.submit "Update", class: 'nice button radius' %>
+<% end %>
