@@ -74,6 +74,22 @@ body {
       background: -webkit-gradient(linear, left top, left bottom, from(darken($colorA,7%)),to(darken($colorB,7%)));
     }
   }
+   &.facebook {
+    $colorA: #0070b6; 
+    $colorB: #034f91; 
+    color: #FFFFFF !important;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.7);    
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+    border: 1px solid $colorB !important;
+    background: -moz-linear-gradient(top, $colorA 0%, $colorB);
+    background: -webkit-gradient(linear, left top, left bottom, from($colorA),to($colorB));
+    
+    &.nice {border: 1px solid darken($colorB,10%);}
+    &:hover, &:focus {
+      background: -moz-linear-gradient(top, darken($colorA,7%) 0%, darken($colorB,7%));
+      background: -webkit-gradient(linear, left top, left bottom, from(darken($colorA,7%)),to(darken($colorB,7%)));
+    }
+  }
 }
 .centered {text-align: center;}
 #footer {font-size: 12px;}

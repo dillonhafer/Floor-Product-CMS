@@ -3,6 +3,8 @@ JohnsoniteCom::Application.routes.draw do
   
   scope "/admin" do
     resources :users
+    get 'make-admin/:id' => 'users#make_admin', as: 'make_admin'
+    get 'remove-admin/:id' => 'users#remove_admin', as: 'remove_admin'
   end
 
   get 'my-account' => "users#my_account", as: 'my_account'

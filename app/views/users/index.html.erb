@@ -4,13 +4,13 @@
 <table>
   <thead>
     <tr>
-      <th>Email</th><th>Last sign in at</th><th>Admin?</th>
+      <th>Email</th><th>Last sign in at</th><th>Admin?</th><th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |u| %>
     <tr>
-      <td><%= u.email %></td><td><%= u.last_sign_in_at %></td><td><%= u.admin? %></th>
+      <td><%= u.email %></td><td><%= u.last_sign_in_at %></td><td><%= u.admin? %></td><td><%= modify_admin_link u %></td>
     </tr>
     <% end %>
   </tbody>

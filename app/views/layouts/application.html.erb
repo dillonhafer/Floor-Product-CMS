@@ -28,6 +28,7 @@
 
   <div class="row" id="main">
   <div class="large-3 columns">
+    <% if current_user.try(:admin?) %>
     <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">
       <section>
         <p class="title" data-section-title><a href="/">Home</a></p>        
@@ -41,6 +42,7 @@
         </div>
       </section>
     </div>
+    <% end %>
   </div>
   
     <div class="large-9 columns">

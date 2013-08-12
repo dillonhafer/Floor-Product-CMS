@@ -4,4 +4,16 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+
+  def make_admin
+    user = User.find params[:id]
+    user.update_attributes(admin: true)
+    redirect_to users_path
+  end
+
+  def remove_admin
+    user = User.find params[:id]
+    user.update_attributes(admin: false)
+    redirect_to users_path
+  end
 end
