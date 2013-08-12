@@ -1,0 +1,17 @@
+<h1>Users</h1>
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th><th>Last sign in at</th><th>Admin?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |u| %>
+    <tr>
+      <td><%= u.email %></td><td><%= u.last_sign_in_at %></td><td><%= u.admin? %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

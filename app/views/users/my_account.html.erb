@@ -1,0 +1,15 @@
+<style>
+ .large-2 {text-align: right;}
+</style>
+<h1>Your account</h1>
+<hr />
+
+<div class='row'>
+  <div class='large-2 columns'><b>Email:</b></div>
+  <div class='large-10 columns'><%= current_user.email %></div>   
+</div>
+
+<div class='row'>
+  <div class='large-2 columns'><b>Name:</b></div>
+  <div class='large-10 columns'><%= current_user.name %></div>   
+</div>

@@ -12,9 +12,12 @@
   <nav class="top-bar">
   <section class="top-bar-section" id="menu">
       <ul class="left">
-        <li><a href="/" id="logo">Johnsonite.com</a></li>
+        <li><a href="/" id="logo"><%= image_tag "logo.gif" %></a></li>
+      </ul>      
+      <ul class="right hide-for-small">
       <% if user_signed_in? %>
-        <li><%= link_to current_user.email, '#' %></li>
+        <li><%= link_to current_user.email, my_account_path %></li>
+        <li class="divider"></li>
         <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
       <% else %>
         <li><%= link_to('Login', new_user_session_path)  %></li>
