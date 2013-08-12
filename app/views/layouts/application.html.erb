@@ -27,11 +27,23 @@
 </nav>
 
   <div class="row" id="main">
-    <div class="large-4">
-      <ul>
-
+  <div class="large-3 columns">
+    <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">
+      <section>
+        <p class="title" data-section-title><a href="/">Home</a></p>        
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#">Users</a></p>
+        <div class="content" data-section-content>
+          <ul class="side-nav">
+            <li><%= link_to 'All Users', users_path %></li>            
+          </ul>
+        </div>
+      </section>
     </div>
-    <div class="large-8">
+  </div>
+  
+    <div class="large-9 columns">
       <%= yield %>
     </div>
   </div>
