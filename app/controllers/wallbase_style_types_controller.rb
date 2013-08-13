@@ -1,0 +1,2 @@
+class WallbaseStyleTypesController < ApplicationController
+end

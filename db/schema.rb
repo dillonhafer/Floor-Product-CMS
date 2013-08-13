@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813151145) do
+ActiveRecord::Schema.define(version: 20130813162332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "color_palettes", force: true do |t|
+    t.string   "name"
+    t.integer  "order_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "colors", force: true do |t|
+    t.integer  "color_palette_id"
+    t.string   "color_number"
+    t.string   "name"
+    t.string   "hex"
+    t.string   "color_foundation"
+    t.boolean  "selects"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "product_categories", force: true do |t|
     t.string   "name"
@@ -48,6 +66,14 @@ ActiveRecord::Schema.define(version: 20130813151145) do
     t.datetime "updated_at"
   end
 
+  create_table "profile_color_palettes", id: false, force: true do |t|
+    t.integer "wallbase_profile_id", null: false
+    t.integer "color_palette_id",    null: false
+  end
+
+  create_table "style_types", id: false, force: true do |t|
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -75,5 +101,42 @@ ActiveRecord::Schema.define(version: 20130813151145) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
+
+  create_table "wallbase_collection_sections", force: true do |t|
+    t.integer  "wallbase_collection_id"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wallbase_collections", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "material"
+    t.boolean  "icon_1"
+    t.boolean  "icon_2"
+    t.boolean  "icon_3"
+    t.boolean  "icon_4"
+    t.boolean  "icon_5"
+    t.text     "collection_description"
+  end
+
+  create_table "wallbase_profiles", force: true do |t|
+    t.integer  "wallbase_style_type_id"
+    t.float    "size"
+    t.string   "name"
+    t.string   "uuid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "wallbase_style_types", force: true do |t|
+    t.string   "name"
+    t.integer  "wallbase_collection_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

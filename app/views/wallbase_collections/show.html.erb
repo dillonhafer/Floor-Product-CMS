@@ -1,0 +1,51 @@
+<style>
+li {list-style-type: none;}
+a.red {color: red;}
+</style>
+<h3 class="subheader">List of Collections</h3>
+<hr />
+
+<%= link_to "All collections", wallbase_collections_path, class: 'button nice radius' %>
+
+<div class="large-12 columns">  
+  <h5><%= @collection.name %></h5>
+  <%= link_to "Add Style", new_wallbase_style_type_path(collection_id: @collection.id), class: 'small button nice radius' %>    
+  <%= link_to "Delete Collection", wallbase_collection_path(@collection), method: :delete, class: 'right red small button nice radius', data: {confirm: "Are you sure?"} %>
+  <%= link_to "Edit Collection", edit_wallbase_collection_path(@collection), class: 'right small yellow button nice radius right-space' %>
+  <br />
+  <br />
+  <% @collection.wallbase_style_types.each do |s| %>
+    <div class="row">
+      <div class="large-12 columns panel">
+            <%= s.name %> (<%= pluralize s.wallbase_profiles.count, 'profile' %>)
+            <%= link_to "Delete Style", wallbase_style_type_path(s), data: {confirm: "Are you sure?"}, :method => :delete, class: 'red small button radius right' %>
+            <%= link_to "Edit Style", edit_wallbase_style_type_path(s), class: 'small yellow button radius right right-space' %>
+        <br />
+        <hr />
+        <%= link_to "Add Profile", new_wallbase_profile_path(id: s.id), class: 'small button nice radius' %>
+        <div class="row">
+          <div class="large-12 columns">
+            <ul>
+            <% s.wallbase_profiles.each do |p| %>
+              <li><%= p.size %>" <%= p.uuid %> <%= link_to "Edit", edit_wallbase_profile_path(p) %> | <%= link_to "Delete", wallbase_profile_path(p), class: 'red', method: :delete, data: {confirm: "Are you sure?"} %>
+              <br />
+              <% p.color_palettes.each do |cp| %>
+                <span class="color-palette color-palette-<%= cp.name %>"><%= cp.name == 'Selects' ? '&nbsp;'.html_safe : cp.name %></span>
+              <% end %>
+              </li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% @collection.wallbase_collection_sections.each do |cs| %>
+    <span style="text-transform: uppercase">
+      <h5><%= cs.title %></h5>
+      <% cs.body.each_line do |line| %>
+        <%= line %><br />
+      <% end %>
+    <span>
+  <% end %>
+</div>

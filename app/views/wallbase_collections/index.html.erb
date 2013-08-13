@@ -1,0 +1,19 @@
+<h3 class="subheader">List of Wallbase Collections</h3>
+<hr />
+
+<%= link_to "New Wallbase Collection", new_wallbase_collection_path, class: ' button nice radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @collections.each do |c| %>
+    <tr>
+      <td><%= link_to c.name, wallbase_collection_path(c) %></td><td><%= link_to 'edit', edit_wallbase_collection_path(c), class: 'small yellow button radius' %> <%= link_to 'delete', wallbase_collection_path(c), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

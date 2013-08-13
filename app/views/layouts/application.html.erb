@@ -39,64 +39,50 @@
   <% end %>
 
   <div class="row" id="main">
-  <div id="side-nav" class="large-3 columns">
+  <div id="side-nav" class="side-nav large-3 columns">
     <% if current_user.try(:admin?) %>
+    <h5>Main</h5>
     <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">
       <section>
-        <p class="title" data-section-title><a href="/">Home</a></p>        
+        <p class="title" data-section-title><%= link_to 'Home', root_path %></p>        
       </section>
       <section>
-        <p class="title" data-section-title><a href="#">Users</a></p>
-        <div class="content" data-section-content>
-          <ul class="side-nav">
-            <li><%= link_to 'All Users', users_path %></li>            
-          </ul>
-        </div>
+        <p class="title" data-section-title><%= link_to 'Users', users_path %></p>
+      </section>
+    </div>
+    <h5>Products</h5>
+    <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">
+      <section>
+        <p class="title" data-section-title><%= link_to 'Product Categories', product_categories_path %></p>
       </section>
       <section>
-        <p class="title" data-section-title><a href="#">Product Categories</a></p>
-        <div class="content" data-section-content>
-          <ul class="side-nav">
-            <li><%= link_to 'All Product Categories', product_categories_path %></li>            
-            <li><%= link_to 'New Product Category', new_product_category_path %></li>            
-          </ul>
-        </div>
+        <p class="title" data-section-title><%= link_to 'Product Families', product_families_path %></p>
       </section>
       <section>
-        <p class="title" data-section-title><a href="#">Product Families</a></p>
-        <div class="content" data-section-content>
-          <ul class="side-nav">
-            <li><%= link_to 'All Product Families', product_families_path %></li>            
-            <li><%= link_to 'New Product Family', new_product_family_path %></li>            
-          </ul>
-        </div>
+        <p class="title" data-section-title><%= link_to 'Product Thicknesses', product_thicknesses_path %></p>
       </section>
       <section>
-        <p class="title" data-section-title><a href="#">Product Thicknesses</a></p>
-        <div class="content" data-section-content>
-          <ul class="side-nav">
-            <li><%= link_to 'All Product Thicknesses', product_thicknesses_path %></li>            
-            <li><%= link_to 'New Product Thickness', new_product_thickness_path %></li>            
-          </ul>
-        </div>
+        <p class="title" data-section-title><%= link_to 'Product Widths', product_widths_path %></p>
       </section>
       <section>
-        <p class="title" data-section-title><a href="#">Product Widths</a></p>
-        <div class="content" data-section-content>
-          <ul class="side-nav">
-            <li><%= link_to 'All Product Widths', product_widths_path %></li>            
-            <li><%= link_to 'New Product Width', new_product_width_path %></li>            
-          </ul>
-        </div>
+        <p class="title" data-section-title><%= link_to 'Product Lengths', product_lengths_path %></p>
+      </section>
+    </div>
+
+    <h5>Wallbase</h5>
+    <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">      
+      <section>
+        <p class="title" data-section-title><%= link_to 'Wallbase Collections', wallbase_collections_path %></p>
       </section>
       <section>
-        <p class="title" data-section-title><a href="#">Product Lengths</a></p>
-        <div class="content" data-section-content>
-          <ul class="side-nav">
-            <li><%= link_to 'All Product Lengths', product_lengths_path %></li>            
-            <li><%= link_to 'New Product Length', new_product_length_path %></li>            
-          </ul>
-        </div>
+        <p class="title" data-section-title><%= link_to 'Wallbase Style Types', wallbase_style_types_path %></p>
+      </section>
+    </div>
+
+    <h5>Colors</h5>
+    <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">      
+      <section>
+        <p class="title" data-section-title><%= link_to 'Colors & Palettes', color_palettes_path %></p>
       </section>
     </div>
     <% end %>

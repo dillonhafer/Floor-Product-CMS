@@ -2,12 +2,24 @@ JohnsoniteCom::Application.routes.draw do
   devise_for :users, :path => "sessions", :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' }
   
   scope "/admin" do
+    # Colors
+    resources :colors
+    resources :color_palettes, :path => "color-palettes"
+
+    # Wallbase
+    resources :wallbase_profiles, path: 'wallbase-profiles'
+    resources :wallbase_style_types, path: 'wallbase-style-types'
+    resources :wallbase_collection_sections, path: 'wallbase-collection-sections'
+    resources :wallbase_collections, path: 'wallbase-collections'
+
+    # Products
     resources :product_widths, path: 'product-widths'
     resources :product_lengths, path: 'product-lengths'
     resources :product_thicknesses, path: 'product-thicknesses'
     resources :product_families, path: 'product-families'
     resources :product_categories, path: 'product-categories'
 
+    # Users
     resources :users
     get 'make-admin/:id' => 'users#make_admin', as: 'make_admin'
     get 'remove-admin/:id' => 'users#remove_admin', as: 'remove_admin'

@@ -1,0 +1,2 @@
+module WallbaseStyleTypesHelper
+end
