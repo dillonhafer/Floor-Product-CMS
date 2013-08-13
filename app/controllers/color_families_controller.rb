@@ -1,0 +1,2 @@
+class ColorFamiliesController < ApplicationController
+end
