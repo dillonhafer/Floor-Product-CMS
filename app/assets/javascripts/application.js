@@ -16,3 +16,9 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function() {  
+  if ($('.alert-box.notice').length) {
+    $('.alert-box.notice').hide().fadeIn().delay(2700).fadeOut();
+  }
+});

@@ -42,6 +42,9 @@ body {
 @mixin transition($type: "color"){
   transition: $type 0.25s ease-in-out; -moz-transition: $type 0.25s ease-in-out; -webkit-transition: $type 0.25s ease-in-out; -o-transition: $type 0.25s ease-in-out;
 }
+@mixin shadow {box-shadow: 0 1px 2px rgba(#000,0.2); -moz-box-shadow: 0 1px 2px rgba(#000,0.2); -webkit-box-shadow: 0 1px 2px rgba(#000,0.2);}
+@mixin shadow-big {box-shadow: 0 1px 4px rgba(#000,0.3); -moz-box-shadow: 0 1px 4px rgba(#000,0.3); -webkit-box-shadow: 0 2px 4px rgba(#000,0.3);}
+@mixin shadow-custom($x,$y,$spread,$color,$opacity){box-shadow: $x $y $spread rgba($color,$opacity); -moz-box-shadow: $x $y $spread rgba($color,$opacity); -webkit-box-shadow: $x $y $spread rgba($color,$opacity);}
 
 .button {
   &.blue, & {
@@ -109,4 +112,51 @@ table {
     width: 100%;
     p {width: 100%;}
   }
+}
+
+#side-nav {
+  section {
+    p {
+      background: white;
+      a:hover {
+        color: #43a5fb;
+      }
+    }  
+    .content {
+      border-left: none;
+      border-radius: 0 5px 5px 0;
+    }
+  }
+  section:first-child {
+    p {border-radius: 5px 5px 0 0}
+  }
+  section:last-child {
+    p {border-radius: 0 0 5px 5px}
+  }
+
+}
+
+.errorExplanation {
+  h2 {
+    font-size: 18px;
+    color: red;
+  }
+  ul {
+    margin-left: 42px;
+    color: red;
+  }
+}
+
+.field_with_errors {
+  label { color: red;}
+}
+
+.alert-box.notice {
+  text-align: center;
+  z-index: 999;
+  top: 65px;
+  position: fixed;
+  width: 100%;
+  border: 0;
+  @include shadow;
 }
