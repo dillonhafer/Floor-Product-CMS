@@ -21,6 +21,7 @@ JohnsoniteCom::Application.routes.draw do
     resources :product_thicknesses, path: 'product-thicknesses'
     resources :product_families, path: 'product-families'
     resources :product_categories, path: 'product-categories'
+    resources :product_warranties, path: 'product-warranties'
 
     # Users
     resources :users

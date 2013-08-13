@@ -53,6 +53,7 @@
             <option <%= "selected='selected'" if request.fullpath == product_thicknesses_path %> value="<%= product_thicknesses_path %>">Product Thicknesses</option>
             <option <%= "selected='selected'" if request.fullpath == product_widths_path %> value="<%= product_widths_path %>">Product Widths</option>
             <option <%= "selected='selected'" if request.fullpath == product_lengths_path %> value="<%= product_lengths_path %>">Product Lengths</option>
+            <option <%= "selected='selected'" if request.fullpath == product_warranties_path %> value="<%= product_warranties_path %>">Product Warranties</option>
           </optgroup>
           <optgroup label="Wallbase">
             <option <%= "selected='selected'" if request.fullpath == wallbase_collections_path %> value="<%= wallbase_collections_path %>">Wallbase Collections</option>
@@ -95,6 +96,9 @@
         </section>
         <section>
           <p class="title" data-section-title><%= link_to 'Product Lengths', product_lengths_path %></p>
+        </section>
+        <section>
+          <p class="title" data-section-title><%= link_to 'Product Warranties', product_warranties_path %></p>
         </section>
       </div>
 
