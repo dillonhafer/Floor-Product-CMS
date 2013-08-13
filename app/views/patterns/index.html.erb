@@ -1,0 +1,20 @@
+<h3 class="subheader">Patterns</h3>
+
+<hr />
+
+<%= link_to 'New Pattern', new_pattern_path, class: 'blue button nice radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patterns.all.each do |pc| %>
+    <tr>
+      <td><%= pc.name %></td><td><%= link_to 'edit', edit_pattern_path(pc), class: 'small yellow button radius' %> <%= link_to 'delete', pattern_path(pc), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

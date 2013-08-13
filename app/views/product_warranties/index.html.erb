@@ -1,0 +1,20 @@
+<h3 class="subheader">Product Warranties</h3>
+
+<hr />
+
+<%= link_to 'New Product Warranty', new_product_warranty_path, class: 'blue button nice radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @product_warranties.all.each do |pc| %>
+    <tr>
+      <td><%= pc.name %></td><td><%= link_to 'edit', edit_product_warranty_path(pc), class: 'small yellow button radius' %> <%= link_to 'delete', product_warranty_path(pc), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,8 @@
+<h3 class="subheader">New Product Warranty</h3>
+<hr />
+<%= form_for @product_warranty do |f| %>
+  
+  <%= render partial: 'form', locals: {f: f} %>
+  
+  <%= f.submit "Create", class: 'nice button radius' %>
+<% end %>
