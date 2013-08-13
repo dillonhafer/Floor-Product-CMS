@@ -2,17 +2,11 @@
 li {list-style-type: none;}
 a.red {color: red;}
 </style>
-<h3 class="subheader">List of Collections</h3>
+<h3 class="subheader"><%= @collection.name %></h3>
 <hr />
 
-<%= link_to "All collections", wallbase_collections_path, class: 'button nice radius' %>
-
-<div class="large-12 columns">  
-  <h5><%= @collection.name %></h5>
-  <%= link_to "Add Style", new_wallbase_style_type_path(collection_id: @collection.id), class: 'small button nice radius' %>    
-  <%= link_to "Delete Collection", wallbase_collection_path(@collection), method: :delete, class: 'right red small button nice radius', data: {confirm: "Are you sure?"} %>
-  <%= link_to "Edit Collection", edit_wallbase_collection_path(@collection), class: 'right small yellow button nice radius right-space' %>
-  <br />
+<div class="large-12 columns">    
+  <%= link_to "Add Style", new_wallbase_style_type_path(collection_id: @collection.id), class: 'button nice radius' %>    
   <br />
   <% @collection.wallbase_style_types.each do |s| %>
     <div class="row">

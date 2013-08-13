@@ -5,50 +5,50 @@
   <%= f.error_messages %>
   <%= f.text_field :name, placeholder: "Collection Name" %>
   <%= f.text_field :material, placeholder: "Material Name (Rubber)" %>
-  <%= f.text_area :collection_description, placeholder: "Type description here." %>
+  <%= f.text_area :collection_description, placeholder: "Type description here.", rows: 8, style: 'height: auto;' %>
 
   <ul id="spec-image-list" class="large-block-grid-5">
     <li>
       <label>
         <%= f.check_box :icon_1 %>
-        <%= image_tag "Icon_BIAQ.png" %>
+        <%= image_tag "wallbase/Icon_BIAQ.png" %>
       </label>
     </li>
     <li>
       <label>
         <%= f.check_box :icon_2 %>
-        <%= image_tag "icon_floorscore.png" %>
+        <%= image_tag "wallbase/icon_floorscore.png" %>
       </label>
     </li>
     <li>
       <label>
         <%= f.check_box :icon_3 %>
-        <%= image_tag "icon_NSF.png" %>
+        <%= image_tag "wallbase/icon_NSF.png" %>
        </label>
     </li>
     <li>
       <label>
         <%= f.check_box :icon_4 %>
-        <%= image_tag "icon_phthalateFree.png" %>
+        <%= image_tag "wallbase/icon_phthalateFree.png", style: 'width: 100px' %>
        </label>
     </li>
     <li>
       <label>
         <%= f.check_box :icon_5 %>
-        <%= image_tag "icon_phthalateHalogen.png" %>
+        <%= image_tag "wallbase/icon_phthalateHalogen.png" %>
        </label>
     </li>
   </ul>
   <hr />
-  <%= link_to_add_fields "Add Section", f, :collection_sections, class: 'small success button' %>
+  <%= link_to_add_fields "Add Section", f, :wallbase_collection_sections, class: 'small yellow success button nice radius' %>
   
   <div class="row">
     <div class="large-12 columns">      
-       <%= f.fields_for :collection_sections do |builder| %>
-         <%= render 'collection_section_fields', f: builder %>
+       <%= f.fields_for :wallbase_collection_sections do |builder| %>
+         <%= render 'wallbase_collection_section_fields', f: builder %>
        <% end %>
     </div>
   </div>
 
-  <%= f.submit "Create Collection", class: 'success button small' %> <%= link_to "Cancel", collections_path, class: 'alert button small' %>
+  <%= f.submit "Create Collection", class: ' nice button radius' %> <%= link_to "Cancel", wallbase_collections_path, class: ' red button nice radius' %>
 <% end %>
