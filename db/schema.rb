@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813221921) do
+ActiveRecord::Schema.define(version: 20130813222519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,21 @@ ActiveRecord::Schema.define(version: 20130813221921) do
   create_table "products_colors", id: false, force: true do |t|
     t.integer "product_id", null: false
     t.integer "color_id",   null: false
+  end
+
+  create_table "products_patterns", id: false, force: true do |t|
+    t.integer "product_id", null: false
+    t.integer "pattern_id", null: false
+  end
+
+  create_table "products_textures", id: false, force: true do |t|
+    t.integer "product_id", null: false
+    t.integer "texture_id", null: false
+  end
+
+  create_table "products_warranties", id: false, force: true do |t|
+    t.integer "product_id",          null: false
+    t.integer "product_warranty_id", null: false
   end
 
   create_table "style_types", id: false, force: true do |t|
