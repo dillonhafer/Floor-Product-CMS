@@ -25,4 +25,12 @@ $(document).ready(function() {
   $('#nav-select').bind('change', function() {
     window.location = $(this).val();    
   });
+
+  $('#palette-select').bind('change', function() {
+    var cp = $(this).val();  
+    $(".title").each(function() {
+      if($(this).text().trim()==cp)
+        $(this).click();
+    });    
+  });
 });
