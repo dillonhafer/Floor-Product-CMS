@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813221348) do
+ActiveRecord::Schema.define(version: 20130813221921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "color_families", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "color_palettes", force: true do |t|
     t.string   "name"
@@ -30,6 +36,12 @@ ActiveRecord::Schema.define(version: 20130813221348) do
     t.string   "hex"
     t.string   "color_foundation"
     t.boolean  "selects"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "patterns", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,6 +72,12 @@ ActiveRecord::Schema.define(version: 20130813221348) do
     t.datetime "updated_at"
   end
 
+  create_table "product_warranties", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "product_widths", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -84,6 +102,12 @@ ActiveRecord::Schema.define(version: 20130813221348) do
   end
 
   create_table "style_types", id: false, force: true do |t|
+  end
+
+  create_table "textures", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
