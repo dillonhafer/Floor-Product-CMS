@@ -1,0 +1,8 @@
+<h1>Edit Product Thickness</h1>
+<hr />
+<%= form_for @product_thickness do |f| %>
+
+  <%= render partial: 'form', locals: {f: f} %>
+  
+  <%= f.submit "Update", class: 'nice button radius' %>
+<% end %>
