@@ -5,6 +5,9 @@ JohnsoniteCom::Application.routes.draw do
     # Colors
     resources :colors
     resources :color_palettes, :path => "color-palettes"
+    resources :color_families, :path => "color-families"
+    resources :textures, :path => "textures"
+    resources :patterns, :path => "patterns"
 
     # Wallbase
     resources :wallbase_profiles, path: 'wallbase-profiles'

@@ -60,6 +60,9 @@
           </optgroup>
           <optgroup label="Colors">
             <option <%= "selected='selected'" if request.fullpath == color_palettes_path %> value="<%= color_palettes_path %>">Colors & Palettes</option>
+            <option <%= "selected='selected'" if request.fullpath == color_families_path %> value="<%= color_families_path %>">Colors Families</option>
+            <option <%= "selected='selected'" if request.fullpath == textures_path %> value="<%= textures_path %>">Textures</option>
+            <option <%= "selected='selected'" if request.fullpath == patterns_path %> value="<%= patterns_path %>">Patterns</option>
           </optgroup>        
         </select>
       <% end %>
@@ -109,6 +112,15 @@
       <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">      
         <section>
           <p class="title" data-section-title><%= link_to 'Colors & Palettes', color_palettes_path %></p>
+        </section>
+        <section>
+          <p class="title" data-section-title><%= link_to 'Color Families', color_families_path %></p>
+        </section>
+        <section>
+          <p class="title" data-section-title><%= link_to 'Textures', textures_path %></p>
+        </section>
+        <section>
+          <p class="title" data-section-title><%= link_to 'Patterns', patterns_path %></p>
         </section>
       </div>
       <% end %>
