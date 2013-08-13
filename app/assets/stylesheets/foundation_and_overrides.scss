@@ -1,5 +1,4 @@
 /* Background color for the top bar */
-$topbar-bg: #111;
 
 $primary-color: #43a5fb !default;
 $secondary-color: #e9e9e9 !default;
@@ -8,6 +7,9 @@ $success-color: #5da423 !default;
 
 $body-font-family: "Open Sans";
 $header-font-family: "Open Sans";
+
+
+$topbar-bg: #333;
 /* Height and margin */
 $topbar-height: 65px;
 $topbar-margin-bottom: emCalc(30);

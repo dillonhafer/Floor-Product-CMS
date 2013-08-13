@@ -1,0 +1,2 @@
+module ProductWidthsHelper
+end

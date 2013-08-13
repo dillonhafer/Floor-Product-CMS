@@ -1,0 +1,8 @@
+<h1>New Product Length</h1>
+<hr />
+<%= form_for @product_length do |f| %>
+  
+  <%= render partial: 'form', locals: {f: f} %>
+  
+  <%= f.submit "Create", class: 'nice button radius' %>
+<% end %>

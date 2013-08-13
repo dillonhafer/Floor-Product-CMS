@@ -16,6 +16,7 @@
         </ul>      
         <ul class="right hide-for-small">
         <% if user_signed_in? %>
+          <li class="divider"></li>
           <li><%= link_to current_user.email, my_account_path %></li>
           <li class="divider"></li>
           <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
@@ -76,6 +77,24 @@
           <ul class="side-nav">
             <li><%= link_to 'All Product Thicknesses', product_thicknesses_path %></li>            
             <li><%= link_to 'New Product Thickness', new_product_thickness_path %></li>            
+          </ul>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#">Product Widths</a></p>
+        <div class="content" data-section-content>
+          <ul class="side-nav">
+            <li><%= link_to 'All Product Widths', product_widths_path %></li>            
+            <li><%= link_to 'New Product Width', new_product_width_path %></li>            
+          </ul>
+        </div>
+      </section>
+      <section>
+        <p class="title" data-section-title><a href="#">Product Lengths</a></p>
+        <div class="content" data-section-content>
+          <ul class="side-nav">
+            <li><%= link_to 'All Product Lengths', product_lengths_path %></li>            
+            <li><%= link_to 'New Product Length', new_product_length_path %></li>            
           </ul>
         </div>
       </section>
