@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813162332) do
+ActiveRecord::Schema.define(version: 20130813221129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,9 +66,16 @@ ActiveRecord::Schema.define(version: 20130813162332) do
     t.datetime "updated_at"
   end
 
-  create_table "profile_color_palettes", id: false, force: true do |t|
-    t.integer "wallbase_profile_id", null: false
-    t.integer "color_palette_id",    null: false
+  create_table "products", force: true do |t|
+    t.integer  "product_family_id"
+    t.string   "sku"
+    t.string   "part_number"
+    t.integer  "product_thickness_id"
+    t.integer  "product_width_id"
+    t.integer  "product_length_id"
+    t.integer  "wallbase_profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "style_types", id: false, force: true do |t|
@@ -123,10 +130,14 @@ ActiveRecord::Schema.define(version: 20130813162332) do
     t.text     "collection_description"
   end
 
+  create_table "wallbase_profile_color_palettes", id: false, force: true do |t|
+    t.integer "wallbase_profile_id", null: false
+    t.integer "color_palette_id",    null: false
+  end
+
   create_table "wallbase_profiles", force: true do |t|
     t.integer  "wallbase_style_type_id"
     t.float    "size"
-    t.string   "name"
     t.string   "uuid"
     t.datetime "created_at"
     t.datetime "updated_at"
