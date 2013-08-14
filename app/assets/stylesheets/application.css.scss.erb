@@ -160,7 +160,7 @@ table {
   section {
     p {
       @include background-gradient(#f9f9f9, #f2f2f2);
-      &.current-nav {@include background-gradient(#b2e1ff, #66b6fc);a{color:white;}}
+      &.current-nav {text-shadow: 0 1px 1px rgba(0,0,0,0.7);@include background-gradient(#b2e1ff, #66b6fc);a{color:white;}}
       a:hover {
         color: #43a5fb;
       }
@@ -204,6 +204,8 @@ table {
   text-align: center;
   z-index: 999;
   top: 65px;
+  height: 44px;
+  padding: 0.9875em 1.3125em 0.75em 0.6875em !important;
   position: absolute;
   width: 100%;
   border: 0;
