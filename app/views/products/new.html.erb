@@ -3,6 +3,21 @@
 
 <%= form_for @product do |f| %>
   <%= f.error_messages %>
+  <%= f.label :product_family_id %>
+  <%= f.select :product_family_id, ProductFamily.all.map {|p| [p.name,p.id]} %>
+
+  <%= f.label :product_thickness_id %>
+  <%= f.select :product_thickness_id, ProductThickness.all.map {|p| [p.name,p.id]} %>
+
+  <%= f.label :product_length_id %>
+  <%= f.select :product_length_id, ProductLength.all.map {|p| [p.name,p.id]} %>
+
+  <%= f.label :product_width_id %>
+  <%= f.select :product_width_id, ProductWidth.all.map {|p| [p.name,p.id]} %>
+
+  <%= f.label :product_warranty_id %>
+  <%= f.select :product_warranty_id, ProductWarranty.all.map {|p| [p.name,p.id]} %>
+
   <%= f.label :sku %>
   <%= f.text_field :sku %>
   <%= f.submit "Create Product", class: 'nice button radius' %>
