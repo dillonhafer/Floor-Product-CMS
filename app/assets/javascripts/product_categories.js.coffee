@@ -46,12 +46,12 @@ reveal_confirm = (element) ->
     return window.confirm confirm
 
   modal = $ """
-    <div class='reveal-modal small'>
-      <h2 class='header'></h2>
-      <p class='warning'></p>
-      <p>#{message}</p>
-      <div class='footer'>
-        <a class='cancel-button secondary white button radius inline'>
+    <div class='reveal-modal tiny'>
+      <h2 class='header centered'></h2>
+      <p class='warning centered'></p>
+      <p class='centered'>#{message}</p>
+      <div class='footer centered'>
+        <a class='cancel-button full-width secondary white button radius inline'>
           #{confirm_localization['cancel']}
         </a>
       </div>
@@ -69,7 +69,7 @@ reveal_confirm = (element) ->
   confirm_button
     .removeAttr('class')
     .removeAttr('data-confirm')
-    .addClass('button radius red inline confirm')
+    .addClass('button radius red full-width inline confirm')
     .html(confirm.ok || confirm_localization['ok'])
 
   if element.is('form') or element.is(':input')
