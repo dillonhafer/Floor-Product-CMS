@@ -31,11 +31,11 @@ class ColorsController < ApplicationController
   def destroy
     color = Color.find params[:id]
     color.destroy
-    flash[:error] = "Deleted Color"
+    flash[:notice] = "Deleted Color"
     redirect_to color_palettes_path
   end
 
   def color_params
-    params.require(:color).permit(:color_palette_id, :color_number, :name)
+    params.require(:color).permit(:color_palette_id, :color_number, :name, :color_foundation, :hex, :selects)
   end
 end
