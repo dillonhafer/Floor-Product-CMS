@@ -10,7 +10,7 @@ class WallbaseProfilesController < ApplicationController
   end
 
   def create
-    @profile = WallbaseProfile.new params[:profile]
+    @profile = WallbaseProfile.new(wallbase_profile_params)
     
     if @profile.save
       redirect_to wallbase_collection_path(@profile.wallbase_collection), notice: 'Created Profile'
@@ -22,7 +22,7 @@ class WallbaseProfilesController < ApplicationController
   def update
     @profile = WallbaseProfile.find params[:id]
 
-    if @profile.update_attributes params[:profile]
+    if @profile.update_attributes(wallbase_profile_params)
       redirect_to wallbase_collection_path(@profile.wallbase_collection), notice: 'Updated Profile'
     else
       render :edit
@@ -34,5 +34,9 @@ class WallbaseProfilesController < ApplicationController
     profile.destroy
     flash[:error] = "Deleted Profile"
     redirect_to wallbase_collections_path
+  end
+
+  def wallbase_profile_params
+    params.require(:wallbase_profile).permit(:wallbase_style_type_id, :uuid, :size)
   end
 end

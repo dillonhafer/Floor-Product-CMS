@@ -11,7 +11,7 @@ class ColorsController < ApplicationController
   end
 
   def create
-    @color = Color.new params[:color]
+    @color = Color.new(color_params)
     if @color.save
       redirect_to color_palettes_path, notice: 'Created Color'
     else
@@ -21,7 +21,7 @@ class ColorsController < ApplicationController
 
   def update
     @color = Color.find params[:id]
-    if @color.update_attributes params[:color]
+    if @color.update_attributes(color_params)
       redirect_to color_palettes_path(color_palette_id: @color.color_palette_id), notice: 'Updated Color'
     else
       render :edit
@@ -33,5 +33,9 @@ class ColorsController < ApplicationController
     color.destroy
     flash[:error] = "Deleted Color"
     redirect_to color_palettes_path
+  end
+
+  def color_params
+    params.require(:color).permit(:color_palette_id, :color_number, :name)
   end
 end

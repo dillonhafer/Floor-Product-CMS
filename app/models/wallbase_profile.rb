@@ -1,5 +1,5 @@
 class WallbaseProfile < ActiveRecord::Base
-  validates_presence_of :style_type_id, :uuid, :size
+  validates_presence_of :wallbase_style_type_id, :uuid, :size
   
   belongs_to :wallbase_style_type
   has_one :wallbase_collection, through: :wallbase_style_type, dependent: :destroy

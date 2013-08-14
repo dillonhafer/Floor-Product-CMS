@@ -18,7 +18,7 @@ class WallbaseCollectionsController < ApplicationController
   end
 
   def create
-    @collection = WallbaseCollection.new params[:collection]
+    @collection = WallbaseCollection.new(wallbase_collection_params)
     if @collection.save
       redirect_to wallbase_collection_path(@collection), notice: 'Create Wallbase Collection'
     else
@@ -29,7 +29,7 @@ class WallbaseCollectionsController < ApplicationController
   def update
     @collection = WallbaseCollection.find params[:id]
 
-    if @Wallbasecollection.update_attributes params[:collection]
+    if @Wallbasecollection.update_attributes(wallbase_collection_params)
       redirect_to wallbase_collection_path(@collection), notice: 'Updated Wallbase Collection'
     else
       render :edit
@@ -41,5 +41,9 @@ class WallbaseCollectionsController < ApplicationController
     colleciton.destroy
     flash[:error] = 'Deleted Wallbase Collection'
     redirect_to wallbase_collections_path
+  end
+
+  def wallbase_collection_params
+    params.require(:wallbase_collection).permit(:name, :material)
   end
 end

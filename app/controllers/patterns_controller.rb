@@ -10,7 +10,7 @@ class PatternsController < ApplicationController
   end
 
   def create
-    @pattern = Pattern.new patter_params
+    @pattern = Pattern.new pattern_params
     if @pattern.save
       redirect_to patterns_path, notice: 'Added pattern'
     else
@@ -24,7 +24,7 @@ class PatternsController < ApplicationController
 
   def update
     @pattern = Pattern.find params[:id]
-    if @pattern.update_attributes(patter_params)
+    if @pattern.update_attributes(pattern_params)
       redirect_to patterns_path, notice: 'Updated pattern'
     else
       render 'edit'
@@ -37,7 +37,7 @@ class PatternsController < ApplicationController
     redirect_to patterns_path, notice: 'Deleted pattern'
   end
 
-  def patter_params
+  def pattern_params
     params.require(:pattern).permit(:name)
   end
 end

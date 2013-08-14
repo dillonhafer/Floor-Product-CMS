@@ -10,7 +10,7 @@ class TexturesController < ApplicationController
   end
 
   def create
-    @texture = Texture.new patter_params
+    @texture = Texture.new texture_params
     if @texture.save
       redirect_to textures_path, notice: 'Added texture'
     else
@@ -24,7 +24,7 @@ class TexturesController < ApplicationController
 
   def update
     @texture = Texture.find params[:id]
-    if @texture.update_attributes(patter_params)
+    if @texture.update_attributes(texture_params)
       redirect_to textures_path, notice: 'Updated texture'
     else
       render 'edit'
@@ -37,7 +37,7 @@ class TexturesController < ApplicationController
     redirect_to textures_path, notice: 'Deleted texture'
   end
 
-  def patter_params
+  def texture_params
     params.require(:texture).permit(:name)
   end
 end
