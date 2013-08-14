@@ -4,7 +4,7 @@
 <%= form_for @product do |f| %>
   <%= f.error_messages %>
   <%= f.label :product_family_id %>
-  <%= f.select :product_family_id, ProductFamily.all.map {|p| [p.name,p.id]} %>
+  <%= f.grouped_collection_select(:product_family_id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
 
   <%= f.label :product_thickness_id %>
   <%= f.select :product_thickness_id, ProductThickness.all.map {|p| [p.name,p.id]} %>

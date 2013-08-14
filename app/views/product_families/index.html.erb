@@ -11,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @product_families.all.each do |pc| %>
+    <% @product_families.order(:product_category_id, :name).each do |pc| %>
     <tr>
       <td><%= pc.product_category.name %></td><td><%= pc.name %></td><td><%= pc.sample_code %></td><td><%= link_to 'edit', edit_product_family_path(pc), class: 'small yellow button radius' %> <%= link_to 'delete', product_family_path(pc), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
     </tr>
