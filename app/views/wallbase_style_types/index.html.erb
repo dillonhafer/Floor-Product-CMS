@@ -1,0 +1,18 @@
+<h3>Style Types</h3>
+<hr />
+<%= link_to "New Style Type", new_wallbase_style_type_path, class: 'button nice radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @style_types.each do |st| %>
+    <tr>
+      <td><%= st.name %></td><td><%= link_to "Edit", edit_wallbase_style_type_path(st), class: 'small yellow button nice radius' %>  <%= link_to "Delete", wallbase_style_type_path(st), data: {confirm: "Are you sure?"}, :method => :delete, class: 'small red button nice radius' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

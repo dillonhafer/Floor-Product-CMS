@@ -1,0 +1,11 @@
+<h3>Update: <span class='label'><%= @style_type.name %></span></h3>
+<hr />
+<%= form_for @style_type, html: {class: 'custom'} do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :wallbase_collection_id, "Wallbase Collection" %>
+  <%= f.select :wallbase_collection_id, WallbaseCollection.order(:name).map {|c| [c.name, c.id]} %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Style Type Name" %>
+
+  <%= f.submit "Update style type", class: 'nice radius button' %> <%= link_to "Cancel", wallbase_style_types_path, class: 'nice radius red button' %>
+<% end %>
