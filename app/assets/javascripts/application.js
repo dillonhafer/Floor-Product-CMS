@@ -22,15 +22,24 @@ $(document).ready(function() {
     $('.alert-box.notice').hide().fadeIn().delay(2700).fadeOut();
   }
 
-  $('#nav-select').bind('change', function() {
+  $('#nav-select').on('change', function() {
     window.location = $(this).val();    
   });
 
-  $('#palette-select').bind('change', function() {
+  $('#palette-select').on('change', function() {
     var cp = $(this).val();  
     $(".title").each(function() {
       if($(this).text().trim()==cp)
         $(this).click();
     });    
+  });
+
+  $('a.product-details-link').on('click', function() {
+    $(this).parent().parent().next('tr').fadeToggle('fast');
+    if ($(this).text() == '[+]') {
+      $(this).text('[-]')
+    } else {
+      $(this).text('[+]')
+    }
   });
 });

@@ -6,13 +6,23 @@
 <table>
   <thead>
     <tr>
-      <th>SKU</th><th>Actions</th>
+      <th>Family</th><th>SKU</th><th colspan="2">Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |p| %>
-    <tr>
-      <td><%= p.sku %></td><td><%= link_to 'edit', edit_product_path(p), class: 'small yellow button radius' %> <%= link_to 'delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
+    <tr class="product-row">
+      <td><%= p.product_family.name %></td><td><%= p.sku %></td><td><%= link_to 'edit', edit_product_path(p), class: 'small yellow button radius' %> <%= link_to 'delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td><td><a class="product-details-link right" href="javascript:void(0)">[+]</a></td>
+    </tr>
+    <tr class='hide product-details'>
+      <td colspan='4'>
+        <ul class='large-block-grid-4 small-block-grid-1'>
+          <li>Length: <%= p.length %></li>
+          <li>Width: <%= p.width %></li>
+          <li>Thickness: <%= p.thickness %></li>
+          <li>Warranty: <%= p.warranty %></li>
+        </ul>
+      </td>
     </tr>
     <% end %>
   </tbody>
