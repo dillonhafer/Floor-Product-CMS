@@ -1,3 +1,47 @@
-<h3 class="subheader">Welcome to the admin section</h3>
+<h3 class="subheader ">Welcome to the Johnsonite Product Manager</h3>
 <hr />
-<p>Use the navigation on the left to get started.</p>
+<p>
+  Use the navigation on the left to get started, or if you're new, you can learn what to do <%= link_to "here", 'javascript:void(0)', id: 'joyride-start' %>.
+  <br /><%= image_tag "get_started.png", style: 'width:64px; height: 68px;' %>
+</p>
+
+<ol class="joyride-list" data-joyride>
+  <li data-id="" data-text="I want a tour!">
+    <p>Hello and welcome to Johnsonite Product Manager.</p>
+  </li>
+  <li data-id="no1" data-class="custom so-awesome" data-text="Next">
+    <h4>Products</h4>
+    <p>Here you can create and manage indiviual products using this link. This is where you'll spend most of your time.</p>
+  </li>
+  <li data-id="no2" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
+    <h4>Product Attributes</h4>
+    <p>Various product attributes can be managed by using the rest of the links in this section.</p>
+  </li>
+  <li data-id="no3" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
+    <h4>Wallbase</h4>
+    <p>The Wallbase filter tool can now be mangaged using these links!</p>
+  </li>
+  <li data-id="no4" data-button="Next" data-options="tipLocation:top;tipAnimation:fade">
+    <h4>Colors</h4>
+    <p>We know there are a lot of colors and designs. You're able to manage all the complicated color stuff using this section!</p>
+  </li>
+  <li data-button="Get Started">
+    <h4 id="joy-over" class="centered">All Done!</h4>
+    <p class="centered">That's the tour! Have fun! :)</p>
+  </li>
+</ol>
+
+<script type="text/javascript">
+  $('#joyride-start').bind('click', function() {    
+    $(document).foundation('joyride', 'start', 
+      {  template : { // HTML segments for tip layout
+            link    : '<a href="#close" class="joyride-close-tip">&times;</a>',
+            timer   : '<div class="joyride-timer-indicator-wrap"><span class="joyride-timer-indicator"></span></div>',
+            tip     : '<div class="joyride-tip-guide"><span class="joyride-nub"></span></div>',
+            wrapper : '<div class="joyride-content-wrapper"></div>',
+            button  : '<a href="#" class="small radius button full-width joyride-next-tip"></a>'
+          }
+        }
+      );
+  });
+</script>

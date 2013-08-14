@@ -134,6 +134,7 @@ body {
       @include background-gradient(darken($colorA, 7%), darken($colorB,7%));
     }
   }
+  &.full-width {width: 100%;}
 }
 .centered {text-align: center;}
 #footer {font-size: 12px;margin-bottom: 20px;}
@@ -159,6 +160,7 @@ table {
   section {
     p {
       @include background-gradient(#f9f9f9, #f2f2f2);
+      &.current-nav {@include background-gradient(#b2e1ff, #66b6fc);a{color:white;}}
       a:hover {
         color: #43a5fb;
       }

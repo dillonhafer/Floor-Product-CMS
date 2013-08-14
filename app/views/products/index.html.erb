@@ -1,0 +1,19 @@
+<h3 class="subheader">Products</h3>
+<hr />
+
+<%= link_to "New Product", new_product_path, class: 'nice button radius' %>
+
+<table>
+  <thead>
+    <tr>
+      <th>SKU</th><th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+    <tr>
+      <td><%= p.sku %></td><td><%= link_to 'edit', edit_product_path(p), class: 'small yellow button radius' %> <%= link_to 'delete', product_path(p), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

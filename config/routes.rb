@@ -16,6 +16,7 @@ JohnsoniteCom::Application.routes.draw do
     resources :wallbase_collections, path: 'wallbase-collections'
 
     # Products
+    resources :products
     resources :product_widths, path: 'product-widths'
     resources :product_lengths, path: 'product-lengths'
     resources :product_thicknesses, path: 'product-thicknesses'

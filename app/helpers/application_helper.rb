@@ -19,4 +19,8 @@ module ApplicationHelper
     end
     link_to(name, 'javascript:void(0)', class: "add_fields #{options[:class]}", data: {id: id, fields: fields.gsub("\n", "")})
   end
+
+  def is_current?(controller)
+    "current-nav" if controller == params[:controller]
+  end
 end

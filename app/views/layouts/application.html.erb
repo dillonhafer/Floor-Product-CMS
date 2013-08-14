@@ -6,6 +6,7 @@
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />  
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -48,6 +49,7 @@
             <option <%= "selected='selected'" if request.fullpath == users_path %> value="<%= users_path %>">Users</option>
           </optgroup>
           <optgroup label="Products">
+            <option <%= "selected='selected'" if request.fullpath == products_path %> value="<%= products_path %>">Products</option>
             <option <%= "selected='selected'" if request.fullpath == product_categories_path %> value="<%= product_categories_path %>">Product Categories</option>
             <option <%= "selected='selected'" if request.fullpath == product_families_path %> value="<%= product_families_path %>">Product Families</option>
             <option <%= "selected='selected'" if request.fullpath == product_thicknesses_path %> value="<%= product_thicknesses_path %>">Product Thicknesses</option>
@@ -74,57 +76,60 @@
       <h5>Main</h5>
       <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">
         <section>
-          <p class="title" data-section-title><%= link_to 'Home', root_path %></p>        
+          <p id="firstStop" class="title <%= is_current?('welcome') %>" data-section-title><%= link_to 'Home', root_path %></p>        
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Users', users_path %></p>
+          <p class="title <%= is_current?('users') %>" data-section-title><%= link_to 'Users', users_path %></p>
         </section>
       </div>
       <h5>Products</h5>
       <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">
         <section>
-          <p class="title" data-section-title><%= link_to 'Product Categories', product_categories_path %></p>
+          <p id="no1" class="title <%= is_current?('products') %>" data-section-title><%= link_to 'Products', products_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Product Families', product_families_path %></p>
+          <p class="title <%= is_current?('product_categories') %>" data-section-title><%= link_to 'Product Categories', product_categories_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Product Thicknesses', product_thicknesses_path %></p>
+          <p class="title <%= is_current?('product_families') %>" data-section-title><%= link_to 'Product Families', product_families_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Product Widths', product_widths_path %></p>
+          <p id="no2" class="title <%= is_current?('product_thicknesses') %>" data-section-title><%= link_to 'Product Thicknesses', product_thicknesses_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Product Lengths', product_lengths_path %></p>
+          <p class="title <%= is_current?('product_widths') %>" data-section-title><%= link_to 'Product Widths', product_widths_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Product Warranties', product_warranties_path %></p>
+          <p class="title <%= is_current?('product_lengths') %>" data-section-title><%= link_to 'Product Lengths', product_lengths_path %></p>
+        </section>
+        <section>
+          <p class="title <%= is_current?('product_warranties') %>" data-section-title><%= link_to 'Product Warranties', product_warranties_path %></p>
         </section>
       </div>
 
       <h5>Wallbase</h5>
       <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">      
         <section>
-          <p class="title" data-section-title><%= link_to 'Wallbase Collections', wallbase_collections_path %></p>
+          <p id="no3" class="title <%= is_current?('wallbase_collections') %>" data-section-title><%= link_to 'Wallbase Collections', wallbase_collections_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Wallbase Style Types', wallbase_style_types_path %></p>
+          <p class="title <%= is_current?('wallbase_style_types') %>" data-section-title><%= link_to 'Wallbase Style Types', wallbase_style_types_path %></p>
         </section>
       </div>
 
       <h5>Colors</h5>
       <div class="section-container vertical-nav" data-section="vertical-nav" data-options="one_up: false;">      
         <section>
-          <p class="title" data-section-title><%= link_to 'Colors & Palettes', color_palettes_path %></p>
+          <p id="no4" class="title <%= is_current?('color_palettes') %>" data-section-title><%= link_to 'Colors & Palettes', color_palettes_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Color Families', color_families_path %></p>
+          <p class="title <%= is_current?('color_families') %>" data-section-title><%= link_to 'Color Families', color_families_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Textures', textures_path %></p>
+          <p class="title <%= is_current?('textures') %>" data-section-title><%= link_to 'Textures', textures_path %></p>
         </section>
         <section>
-          <p class="title" data-section-title><%= link_to 'Patterns', patterns_path %></p>
+          <p class="title <%= is_current?('patterns') %>" data-section-title><%= link_to 'Patterns', patterns_path %></p>
         </section>
       </div>
       <% end %>
