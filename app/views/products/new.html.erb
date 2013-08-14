@@ -2,6 +2,8 @@
 <hr />
 
 <%= form_for @product do |f| %>
-  
-  <%= f.submit "Create Product" %>
+  <%= f.error_messages %>
+  <%= f.label :sku %>
+  <%= f.text_field :sku %>
+  <%= f.submit "Create Product", class: 'nice button radius' %>
 <% end %>
