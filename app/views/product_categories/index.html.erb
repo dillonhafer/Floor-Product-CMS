@@ -13,7 +13,7 @@
   <tbody>
     <% @product_categories.order(:name).each do |pc| %>
     <tr>
-      <td><%= pc.name %> (<%= pluralize pc.product_families.count, 'product family' %>)</td><td><%= link_to 'edit', edit_product_category_path(pc), class: 'small yellow button radius' %> <%= link_to 'delete', product_category_path(pc), method: :delete, data: {confirm: 'Are you sure?'}, class: 'small red button nice radius' %></td>
+      <td><%= pc.name %> (<%= pluralize pc.product_families.count, 'product family' %>)</td><td><%= link_to 'edit', edit_product_category_path(pc), class: 'small yellow button radius' %> <%= link_to 'delete', product_category_path(pc), method: :delete, data: {confirm: '1', verb: "Delete #{pc.name}", message: "This will delete ALL product families and products associated to #{pc.name}!"}, class: 'small red button nice radius' %></td>
     </tr>
     <% end %>
   </tbody>

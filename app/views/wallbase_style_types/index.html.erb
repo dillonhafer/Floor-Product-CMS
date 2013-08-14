@@ -11,7 +11,7 @@
   <tbody>
     <% @style_types.each do |st| %>
     <tr>
-      <td><%= st.name %></td><td><%= link_to "Edit", edit_wallbase_style_type_path(st), class: 'small yellow button nice radius' %>  <%= link_to "Delete", wallbase_style_type_path(st), data: {confirm: "Are you sure?"}, :method => :delete, class: 'small red button nice radius' %></td>
+      <td><%= st.name %></td><td><%= link_to "Edit", edit_wallbase_style_type_path(st), class: 'small yellow button nice radius' %>  <%= link_to "Delete", wallbase_style_type_path(st), data: {confirm: "1"}, :method => :delete, class: 'small red button nice radius' %></td>
     </tr>
     <% end %>
   </tbody>
