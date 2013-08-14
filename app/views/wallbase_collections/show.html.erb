@@ -12,7 +12,7 @@ a.red {color: red;}
     <div class="row">
       <div class="large-12 columns panel">
             <%= s.name %> (<%= pluralize s.wallbase_profiles.count, 'profile' %>)
-            <%= link_to "Delete Style", wallbase_style_type_path(s), data: {confirm: "Are you sure?"}, :method => :delete, class: 'red small button radius right' %>
+            <%= link_to "Delete Style", wallbase_style_type_path(s), data: {confirm: "1"}, :method => :delete, class: 'red small button radius right' %>
             <%= link_to "Edit Style", edit_wallbase_style_type_path(s), class: 'small yellow button radius right right-space' %>
         <br />
         <hr />
@@ -21,7 +21,7 @@ a.red {color: red;}
           <div class="large-12 columns">
             <ul>
             <% s.wallbase_profiles.each do |p| %>
-              <li><%= p.size %>" <%= p.uuid %> <%= link_to "Edit", edit_wallbase_profile_path(p) %> | <%= link_to "Delete", wallbase_profile_path(p), class: 'red', method: :delete, data: {confirm: "Are you sure?"} %>
+              <li><%= p.size %>" <%= p.uuid %> <%= link_to "Edit", edit_wallbase_profile_path(p) %> | <%= link_to "Delete", wallbase_profile_path(p), class: 'red', method: :delete, data: {confirm: "1"} %>
               <br />
               <% p.color_palettes.each do |cp| %>
                 <span class="color-palette <%= cp.css_class %>"><%= cp.name == 'Selects' ? '&nbsp;'.html_safe : cp.name %></span>

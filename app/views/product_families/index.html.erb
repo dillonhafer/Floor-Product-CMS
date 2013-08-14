@@ -13,7 +13,7 @@
   <tbody>
     <% @product_families.order(:product_category_id, :name).each do |pc| %>
     <tr>
-      <td><%= pc.product_category.name %></td><td><%= pc.name %></td><td><%= pc.sample_code %></td><td><%= link_to 'edit', edit_product_family_path(pc), class: 'small yellow button radius' %> <%= link_to 'delete', product_family_path(pc), method: :delete, data: {confirm: '1', verb: "Delete #{pc.name}", message: "This will delete ALL products associated to #{pc.name}!"}, class: 'small red button nice radius' %></td>
+      <td><%= pc.product_category.name %></td><td><%= pc.name %></td><td><%= pc.sample_code %></td><td><%= link_to 'Edit', edit_product_family_path(pc), class: 'small yellow button radius full-width' %> <%= link_to 'Delete', product_family_path(pc), method: :delete, data: {confirm: '1', verb: "Delete #{pc.name}", message: "This will delete ALL products associated to #{pc.name}!"}, class: 'small red button nice radius full-width' %></td>
     </tr>
     <% end %>
   </tbody>

@@ -7,7 +7,7 @@ module ColorPalettesHelper
                        <b>#{display_color_number color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "
-        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "Are you sure?"}
+        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "1"}
         divs += "</div></li>"
       end
     elsif color_palette.name.downcase == "wall art"            
@@ -16,7 +16,7 @@ module ColorPalettesHelper
                        <b>#{color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "
-        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "Are you sure?"}
+        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "1"}
         divs += "</div></li>"
       end
     elsif color_palette.name.downcase == "wood"            
@@ -25,7 +25,7 @@ module ColorPalettesHelper
                        <b>#{color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "
-        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "Are you sure?"}
+        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "1"}
         divs += "</div></li>"
       end
     elsif color_palette.name.downcase == "stone"            
@@ -34,7 +34,7 @@ module ColorPalettesHelper
                        <b>#{color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "
-        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "Are you sure?"}
+        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "1"}
         divs += "</div></li>"
       end
     else
@@ -43,7 +43,7 @@ module ColorPalettesHelper
                        <b>#{display_color_number color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "
-        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "Are you sure?"}
+        divs += link_to "Delete", color_path(color), method: :delete, class: 'red_text', data: {confirm: "1"}
         divs += "</div></li>"
       end
     end
