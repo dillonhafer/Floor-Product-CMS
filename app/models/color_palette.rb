@@ -7,4 +7,8 @@ class ColorPalette < ActiveRecord::Base
 
   scope :ordered, order(:order_number)
   scope :labels, order(:id).limit(6)
+
+  def css_class
+    "color-palette-#{name.gsub(' ', '-').downcase}"
+  end
 end

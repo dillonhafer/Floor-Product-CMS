@@ -2,7 +2,7 @@ class WallbaseProfilesController < ApplicationController
   before_filter :require_admin
 
   def new    
-    @profile = WallbaseProfile.new style_type_id: params[:id]
+    @profile = WallbaseProfile.new wallbase_style_type_id: params[:id]
   end
 
   def edit
@@ -11,9 +11,9 @@ class WallbaseProfilesController < ApplicationController
 
   def create
     @profile = WallbaseProfile.new params[:profile]
-    @profile.style_type_id
+    
     if @profile.save
-      redirect_to collection_path(@profile.collection), notice: 'Created Profile'
+      redirect_to wallbase_collection_path(@profile.wallbase_collection), notice: 'Created Profile'
     else
       render :new
     end
@@ -23,7 +23,7 @@ class WallbaseProfilesController < ApplicationController
     @profile = WallbaseProfile.find params[:id]
 
     if @profile.update_attributes params[:profile]
-      redirect_to collection_path(@profile.collection), notice: 'Updated Profile'
+      redirect_to wallbase_collection_path(@profile.wallbase_collection), notice: 'Updated Profile'
     else
       render :edit
     end
@@ -33,6 +33,6 @@ class WallbaseProfilesController < ApplicationController
     profile = WallbaseProfile.find params[:id]
     profile.destroy
     flash[:error] = "Deleted Profile"
-    redirect_to collections_path
+    redirect_to wallbase_collections_path
   end
 end
