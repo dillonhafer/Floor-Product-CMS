@@ -12,7 +12,7 @@ module ColorPalettesHelper
       end
     elsif color_palette.name.downcase == "wall art"            
       color_palette.colors.order(:color_number).each do |color|
-        divs += "<li><div class=' color-swatch'><div class='swatch shadow' style='background: url(#{color.image});'></div><br />
+        divs += "<li><div class=' color-swatch'><div class='swatch shadow' style='background: url(#{image_path color.image});'></div><br />
                        <b>#{color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "
@@ -21,7 +21,7 @@ module ColorPalettesHelper
       end
     elsif color_palette.name.downcase == "wood"            
       color_palette.colors.order(:color_number).each do |color|
-        divs += "<li><div class=' color-swatch'><div class='swatch shadow' style='background: url(#{color.image});'></div><br />
+        divs += "<li><div class=' color-swatch'><div class='swatch shadow' style='background: url(#{image_path color.image});'></div><br />
                        <b>#{color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "
@@ -30,7 +30,7 @@ module ColorPalettesHelper
       end
     elsif color_palette.name.downcase == "stone"            
       color_palette.colors.order(:color_number).each do |color|
-        divs += "<li><div class=' color-swatch'><div class='swatch shadow' style='background: url(#{ color.image});'></div><br />
+        divs += "<li><div class=' color-swatch'><div class='swatch shadow' style='background: url(#{image_path color.image});'></div><br />
                        <b>#{color.color_number}</b> #{color.name}<b> #{color.color_foundation}</b> #{in_selects? color}<br />"
         divs += link_to "Edit", edit_color_path(color)
         divs += " | "

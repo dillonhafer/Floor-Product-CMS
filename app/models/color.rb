@@ -5,11 +5,11 @@ class Color < ActiveRecord::Base
   def image
     case color_palette.name.downcase
     when "stone"
-      #asset_path "/assets/wallbase/stone/#{color_number}.jpg"
+      "wallbase/stone/#{color_number}.jpg"
     when "wood"
-      #asset_path "/assets/wallbase/wood/#{color_number}.jpg"
+      "wallbase/wood/#{color_number}.jpg"
     when "wall art"
-      #asset_path "/assets/wallbase/wallart/#{color_number}.jpg"
+      "wallbase/wallart/#{color_number}.jpg"
     end
   end
 end
