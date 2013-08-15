@@ -2,11 +2,15 @@ class ColorsController < ApplicationController
   
   before_filter :require_admin
 
-  def new    
+  def new
+    @color_palettes = ColorPalette.order(:name)
+    @color_families = ColorFamily.order(:name)
     @color = Color.new color_palette_id: params[:id]
   end
 
   def edit
+    @color_palettes = ColorPalette.order(:name)
+    @color_families = ColorFamily.order(:name)
     @color = Color.find params[:id]
   end
 

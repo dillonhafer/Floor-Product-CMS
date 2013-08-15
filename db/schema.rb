@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130814141828) do
+ActiveRecord::Schema.define(version: 20130815135019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 20130814141828) do
     t.string   "color_number"
     t.string   "name"
     t.string   "hex"
-    t.string   "color_foundation"
     t.boolean  "selects"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "color_family_id"
   end
 
   create_table "patterns", force: true do |t|

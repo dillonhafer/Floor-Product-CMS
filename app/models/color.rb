@@ -1,6 +1,7 @@
 class Color < ActiveRecord::Base
   belongs_to :color_palette
-  validates_presence_of :color_palette_id, :color_number, :name
+  belongs_to :color_family
+  validates_presence_of :color_palette_id, :color_number, :name, :color_family_id
 
   def image
     case color_palette.name.downcase
@@ -11,5 +12,9 @@ class Color < ActiveRecord::Base
     when "wall art"
       "wallbase/wallart/#{color_number}.jpg"
     end
+  end
+
+  def color_family_name
+    color_family.try(:name) || ""
   end
 end

@@ -5,12 +5,13 @@
   <%= f.error_messages %>  
   <br />
   <%= f.label :color_palette_id, "Color Palette" %>
-  <%= f.select :color_palette_id, ColorPalette.order(:name).map {|st| [st.name, st.id]}, :selected => @color.color_palette_id %>
+  <%= f.collection_select :color_palette_id, @color_palettes, :id, :name %>
   <br />
   <br />
   <%= f.text_field :color_number, placeholder: "Color Number (00)" %>
   <%= f.text_field :name, placeholder: "Name (Navy Blue)" %>
-  <%= f.text_field :color_foundation, placeholder: "Color Foundation (WG)" %>
+  <%= f.label :color_family_id, "Color Family" %>
+  <%= f.collection_select :color_family_id, @color_families, :id, :name %>
   <%= f.text_field :hex, placeholder: "Hex Value (7DB9E8)" %>
   <label>
     <%= f.check_box :selects %> Selects Palette Color?

@@ -2,7 +2,7 @@ class ColorFamiliesController < ApplicationController
   before_filter :require_admin
 
   def index
-    @color_families = ColorFamily.all
+    @color_families = ColorFamily.order(:name)
   end
 
   def new
