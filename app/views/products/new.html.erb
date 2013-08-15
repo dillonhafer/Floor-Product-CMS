@@ -7,16 +7,19 @@
   <%= f.grouped_collection_select(:product_family_id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
 
   <%= f.label :product_thickness_id %>
-  <%= f.select :product_thickness_id, ProductThickness.all.map {|p| [p.name,p.id]} %>
+  <%= f.collection_select :product_thickness_id, ProductThickness.order(:name), :id, :name %>  
 
   <%= f.label :product_length_id %>
-  <%= f.select :product_length_id, ProductLength.all.map {|p| [p.name,p.id]} %>
+  <%= f.collection_select :product_length_id, ProductLength.order(:name), :id, :name %>  
 
   <%= f.label :product_width_id %>
-  <%= f.select :product_width_id, ProductWidth.all.map {|p| [p.name,p.id]} %>
+  <%= f.collection_select :product_width_id, ProductWidth.order(:name), :id, :name %>  
 
   <%= f.label :product_warranty_id %>
-  <%= f.select :product_warranty_id, ProductWarranty.all.map {|p| [p.name,p.id]} %>
+  <%= f.collection_select :product_warranty_id, ProductWarranty.order(:name), :id, :name %>  
+
+  <%= f.label :color_id %>
+  <%= f.grouped_collection_select(:color_id, ColorPalette.order(:name), :colors, :name, :id, :name) %>
 
   <%= f.label :sku %>
   <%= f.text_field :sku %>
