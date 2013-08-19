@@ -1,6 +1,4 @@
 require 'bundler/capistrano'
-require './config/boot'
-require 'airbrake/capistrano'
 
 set :application, "johnsonite"
 
