@@ -1,7 +1,7 @@
 <h3 class="subheader">List of Wallbase Collections</h3>
 <hr />
 
-<%= link_to "New Wallbase Collection", new_wallbase_collection_path, class: ' button nice radius' %>
+<%= link_to_icon 'plus-sign icon-white', "New Wallbase Collection", new_wallbase_collection_path, class: 'small green button nice radius' %>
 
 <table>
   <thead>
@@ -12,7 +12,7 @@
   <tbody>
     <% @collections.each do |c| %>
     <tr>
-      <td><%= link_to c.name, wallbase_collection_path(c) %></td><td><%= link_to 'Edit', edit_wallbase_collection_path(c), class: 'small yellow button radius' %> <%= link_to 'Delete', wallbase_collection_path(c), method: :delete, data: {confirm: '1'}, class: 'small red button nice radius' %></td>
+      <td><%= link_to c.name, wallbase_collection_path(c) %></td><td><%= link_to_icon 'edit icon-white', 'Edit', edit_wallbase_collection_path(c), class: 'small blue button radius' %> <%= link_to_icon 'trash icon-white', 'Delete', wallbase_collection_path(c), method: :delete, data: {confirm: '1'}, class: 'small red button nice radius' %></td>
     </tr>
     <% end %>
   </tbody>

@@ -35,11 +35,6 @@ $(document).ready(function() {
   });
 
   $('a.product-details-link').on('click', function() {
-    $(this).parent().parent().next('tr').fadeToggle('fast');
-    if ($(this).text() == '[+]') {
-      $(this).text('[-]')
-    } else {
-      $(this).text('[+]')
-    }
+    $(this).parent().parent().next('tr').fadeToggle('fast');    
   });
 });

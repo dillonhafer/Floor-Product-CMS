@@ -2,7 +2,7 @@
 
 <hr />
 
-<%= link_to 'New Color Family', new_color_family_path, class: 'blue button nice radius' %>
+<%= link_to_icon 'plus-sign icon-white', 'New Color Family', new_color_family_path, class: 'small green button nice radius' %>
 
 <table>
   <thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @color_families.all.each do |pc| %>
     <tr>
-      <td><%= pc.name %> (<%= pluralize pc.colors.count, 'color' %>)</td><td><%= link_to 'Edit', edit_color_family_path(pc), class: 'small yellow button radius' %> <%= link_to 'Delete', color_family_path(pc), method: :delete, data: {confirm: '1', message: 'Warning! This action will delete the colors too!'}, class: 'small red button nice radius' %></td>
+      <td><%= pc.name %> (<%= pluralize pc.colors.count, 'color' %>)</td><td><%= link_to_icon 'edit icon-white', 'Edit', edit_color_family_path(pc), class: 'small blue button radius' %> <%= link_to_icon 'trash icon-white', 'Delete', color_family_path(pc), method: :delete, data: {confirm: '1', message: 'Warning! This action will delete the colors too!'}, class: 'small red button nice radius' %></td>
     </tr>
     <% end %>
   </tbody>

@@ -2,7 +2,7 @@
 
 <hr />
 
-<%= link_to 'New Product Family', new_product_family_path, class: 'blue button nice radius' %>
+<%= link_to_icon 'plus-sign icon-white', 'New Product Family', new_product_family_path, class: 'small green button radius' %>
 
 <table>
   <thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @product_families.order(:product_category_id, :name).each do |pc| %>
     <tr>
-      <td><%= pc.product_category.name %></td><td><%= pc.name %></td><td><%= pc.sample_code %></td><td><%= link_to 'Edit', edit_product_family_path(pc), class: 'small yellow button radius full-width' %> <%= link_to 'Delete', product_family_path(pc), method: :delete, data: {confirm: '1', verb: "Delete #{pc.name}", message: "This will delete ALL products associated to #{pc.name}!"}, class: 'small red button nice radius full-width' %></td>
+      <td><%= pc.product_category.name %></td><td><%= pc.name %></td><td><%= pc.sample_code %></td><td><%= link_to_icon 'edit icon-white', 'Edit', edit_product_family_path(pc), class: 'small blue button radius full-width' %> <%= link_to_icon 'trash icon-white', 'Delete', product_family_path(pc), method: :delete, data: {confirm: '1', verb: "Delete #{pc.name}", message: "This will delete ALL products associated to #{pc.name}!"}, class: 'small red button nice radius full-width' %></td>
     </tr>
     <% end %>
   </tbody>

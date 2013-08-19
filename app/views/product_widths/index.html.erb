@@ -2,7 +2,7 @@
 
 <hr />
 
-<%= link_to 'New Product Width', new_product_width_path, class: 'blue button nice radius' %>
+<%= link_to_icon 'plus-sign icon-white', 'New Product Width', new_product_width_path, class: 'small green button nice radius' %>
 
 <table>
   <thead>
@@ -13,7 +13,7 @@
   <tbody>
     <% @product_widths.all.each do |pc| %>
     <tr>
-      <td><%= pc.name %></td><td><%= link_to 'Edit', edit_product_width_path(pc), class: 'small yellow button radius' %> <%= link_to 'Delete', product_width_path(pc), method: :delete, data: {confirm: '1'}, class: 'small red button nice radius' %></td>
+      <td><%= pc.name %></td><td><%= link_to_icon 'edit icon-white', 'Edit', edit_product_width_path(pc), class: 'small blue button radius' %> <%= link_to_icon 'trash icon-white', 'Delete', product_width_path(pc), method: :delete, data: {confirm: '1'}, class: 'small red button nice radius' %></td>
     </tr>
     <% end %>
   </tbody>

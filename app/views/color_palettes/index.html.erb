@@ -1,7 +1,7 @@
 <h3 class="subheader">List of Color Palettes</h3>
 <hr />
 
-<%= link_to "New Color Palette", new_color_palette_path, class: 'success button nice radius' %>
+<%= link_to_icon 'plus-sign icon-white', "New Color Palette", new_color_palette_path, class: 'small green button nice radius' %>
 
 <%= select_tag :color_palette, options_for_select( @color_palettes.map { |cp| ["#{cp.name} (#{cp.colors.count})", cp.name] } ), id: 'palette-select', prompt: 'Select a palette' %>
 
@@ -15,9 +15,9 @@
       <h4 class="subheader">Palette <%= color_palette.name %></h4>
       <div class="row">
         <div class="large-12 columns">
-          <%= link_to "Add New Color", new_color_path(id: color_palette.id), class: 'success small button nice radius' %>
-          <%= link_to "Delete Color Palette", color_palette_path(color_palette), method: :delete, class: 'red small button nice radius right', data: {confirm: "1"} %>
-          <%= link_to "Edit Color Palette", edit_color_palette_path(color_palette), class: 'small yellow button nice radius right right-space' %>
+          <%= link_to_icon 'plus-sign icon-white', "Add New Color", new_color_path(id: color_palette.id), class: 'green small button nice radius' %>
+          <%= link_to_icon 'trash icon-white', "Delete Color Palette", color_palette_path(color_palette), method: :delete, class: 'red small button nice radius right', data: {confirm: "1"} %>
+          <%= link_to_icon 'edit icon-white', "Edit Color Palette", edit_color_palette_path(color_palette), class: 'small blue button nice radius right right-space' %>
         </div>        
         <hr />
       </div>
