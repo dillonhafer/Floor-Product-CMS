@@ -6,6 +6,7 @@ class Product < ActiveRecord::Base
   belongs_to :product_width
   belongs_to :product_thickness
   belongs_to :product_warranty
+  belongs_to :color
 
   def length
     product_length.name

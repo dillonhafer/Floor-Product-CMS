@@ -1,6 +1,7 @@
 class Color < ActiveRecord::Base
   belongs_to :color_palette
   belongs_to :color_family
+  has_many :products
   validates_presence_of :color_palette_id, :color_number, :name, :color_family_id
 
   def image

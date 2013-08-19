@@ -25,6 +25,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:sku,:product_family_id,:product_thickness_id,:product_length_id,:product_width_id,:product_warranty_id)
+    params.require(:product).permit(:sku,:product_family_id,:product_thickness_id,:product_length_id,:product_width_id,:product_warranty_id,:color_id)
   end
 end
