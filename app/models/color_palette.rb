@@ -11,4 +11,8 @@ class ColorPalette < ActiveRecord::Base
   def css_class
     "color-palette-#{name.gsub(' ', '-').downcase}"
   end
+
+  def formal_name
+    "Palette - #{name}"
+  end
 end

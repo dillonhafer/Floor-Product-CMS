@@ -19,7 +19,7 @@
   <%= f.collection_select :product_warranty_id, ProductWarranty.order(:name), :id, :name %>  
 
   <%= f.label :color_id %>
-  <%= f.grouped_collection_select(:color_id, ColorPalette.order(:name), :colors, :name, :id, :name) %>
+  <%= f.grouped_collection_select(:color_id, ColorPalette.order(:name), :colors, :formal_name, :id, :name) %>
 
   <%= f.label :sku %>
   <%= f.text_field :sku %>
