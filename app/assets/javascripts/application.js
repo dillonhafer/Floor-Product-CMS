@@ -22,8 +22,7 @@ $(document).ready(function() {
   if ($('.alert-box.notice').length) {
     $('.alert-box.notice').hide().fadeIn().delay(2000).fadeOut('fast');
   }
-
-  $('#nav-select').on('change', function() {
+  $(document.body).on('change', '#nav-select', function() {
     window.location = $(this).val();    
   });
 
@@ -35,7 +34,7 @@ $(document).ready(function() {
     });    
   });
 
-  $('a.product-details-link').on('click', function() {
+  $(document.body).on('click', 'a.product-details-link', function() {
     $(this).parent().parent().next('tr').fadeToggle('fast');    
   });
 });
