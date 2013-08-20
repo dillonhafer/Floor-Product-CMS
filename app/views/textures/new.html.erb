@@ -4,5 +4,6 @@
   
   <%= render partial: 'form', locals: {f: f} %>
   
-  <%= f.submit "Create", class: 'nice button radius' %>
+  <%= f.submit "Create Texture", class: 'small green nice button radius' %>
+  <%= link_to "Cancel", textures_path, class: 'small red button radius' %>
 <% end %>

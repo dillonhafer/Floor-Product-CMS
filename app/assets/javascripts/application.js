@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -38,3 +39,6 @@ $(document).ready(function() {
     $(this).parent().parent().next('tr').fadeToggle('fast');    
   });
 });
+
+function reload() { $(document).trigger('resize'); }
+document.addEventListener("page:change", reload );

@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20130815181637) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "color_families", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -118,9 +115,6 @@ ActiveRecord::Schema.define(version: 20130815181637) do
     t.integer "product_warranty_id", null: false
   end
 
-  create_table "style_types", id: false, force: true do |t|
-  end
-
   create_table "textures", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -165,8 +159,6 @@ ActiveRecord::Schema.define(version: 20130815181637) do
 
   create_table "wallbase_collections", force: true do |t|
     t.string   "name"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
     t.string   "material"
     t.boolean  "icon_1"
     t.boolean  "icon_2"
@@ -174,6 +166,8 @@ ActiveRecord::Schema.define(version: 20130815181637) do
     t.boolean  "icon_4"
     t.boolean  "icon_5"
     t.text     "collection_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "wallbase_profile_color_palettes", id: false, force: true do |t|
@@ -184,6 +178,7 @@ ActiveRecord::Schema.define(version: 20130815181637) do
   create_table "wallbase_profiles", force: true do |t|
     t.integer  "wallbase_style_type_id"
     t.float    "size"
+    t.string   "name"
     t.string   "uuid"
     t.datetime "created_at"
     t.datetime "updated_at"
