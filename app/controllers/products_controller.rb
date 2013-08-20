@@ -2,7 +2,10 @@ class ProductsController < ApplicationController
   before_filter :require_admin
 
   def index
-    @products = Product.all
+    @show_on_page = params[:show_on_page] ||= 16  
+    id = params[:product_family_id] ||= 14
+
+    @products = Product.where(product_family_id: id).paginate(page: params[:page], per_page: params[:show_on_page])
   end
 
   def new

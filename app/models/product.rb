@@ -9,18 +9,18 @@ class Product < ActiveRecord::Base
   belongs_to :color
 
   def length
-    product_length.name
+    product_length.name if product_length
   end
 
   def width
-    product_width.name    
+    product_width.name if product_width
   end
 
   def thickness
-    product_thickness.name
+    product_thickness.name if product_thickness
   end
 
   def warranty
-    product_warranty.name
+    product_warranty.name if product_warranty
   end
 end
