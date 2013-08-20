@@ -90,7 +90,7 @@ JohnsoniteCom::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Exceptions
-  Beerance::Application.config.middleware.use ExceptionNotification::Rack,
+  JohnsoniteCom::Application.config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => "[ERROR] ",
     :sender_address => %{"Johnsonite Exception" <errors@johnsonite.net>},
