@@ -1,5 +1,7 @@
-Johnsonite Product Manager
+Johnsonite Product Manager 
 ------
+
+Code climate: [![Code Climate](https://codeclimate.com/repos/5214f390f3ea0049ba04f954/badges/aa92f547acd44399739b/gpa.png)](https://codeclimate.com/repos/5214f390f3ea0049ba04f954/feed)
 
 ---
 This README would normally document whatever steps are necessary to get the
