@@ -5,11 +5,11 @@
 
 <h4><%= @products.count %> Products</h4>
 
-<%= form_tag product_search_path, id: "productSearchForm" do %>    
+<%= form_for :search, url: product_search_path, id: "productSearchForm" do |f| %>    
   <div class='row'>
     <div class='twelve columns'>
       <%= field_set_tag do %>
-        <%= select_tag :product_family_id, options_for_select(ProductFamily.all.map {|pl| [pl.name, pl.id]}, params[:product_family_id]), id: "product_family_select" %>        
+        <%= f.grouped_collection_select(:product_family_id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
         <%= submit_tag 'search', class: "small blue button nice round" %> 
         <%= link_to "advanced", '', :class => 'white round button nice radius small', :id => 'advancedSearch' %>        
       <% end %>
@@ -17,12 +17,11 @@
   </div>
 <% end %>
 
-
-<div class="pagination-container right">
-  <%= will_paginate(@products, :previous_label => "«", :next_label => "»" ) %>
+<div class="pagination-container">
+  <%= will_paginate(@products,:renderer => PaginationListLinkRenderer, :previous_label => "«", :next_label => "»" ) %>
 </div>
-<br />
 
+<h4><%= @family_name %></h4>
 <table>
   <thead>
     <tr>

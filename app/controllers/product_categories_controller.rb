@@ -2,7 +2,7 @@ class ProductCategoriesController < ApplicationController
   before_filter :require_admin
 
   def index
-    @product_categories = ProductCategory.all
+    @product_categories = ProductCategory.order(:name)
   end
 
   def new

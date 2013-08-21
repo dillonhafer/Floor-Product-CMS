@@ -2,7 +2,10 @@ class ProductFamiliesController < ApplicationController
   before_filter :require_admin
 
   def index
-    @product_families = ProductFamily.all
+    @show_on_page = params[:show_on_page] ||= 16  
+    id = params[:product_category_id] ||= 12
+
+    @product_categories = ProductCategory.order(:name)
   end
 
   def new
@@ -41,3 +44,4 @@ class ProductFamiliesController < ApplicationController
     params.require(:product_family).permit(:product_category_id, :name, :sample_code)
   end
 end
+
