@@ -4,22 +4,22 @@
 <%= form_for @product do |f| %>
   <%= f.error_messages %>
   <%= f.label :product_family_id %>
-  <%= f.grouped_collection_select(:product_family_id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
+  <%= f.grouped_collection_select(:product_family_id, ProductCategory.order(:name), :product_families, :name, :id, :name, include_blank: true) %>
 
   <%= f.label :product_thickness_id %>
-  <%= f.collection_select :product_thickness_id, ProductThickness.order(:name), :id, :name %>  
+  <%= f.collection_select :product_thickness_id, ProductThickness.order(:name), :id, :name, include_blank: true %>  
 
   <%= f.label :product_length_id %>
-  <%= f.collection_select :product_length_id, ProductLength.order(:name), :id, :name %>  
+  <%= f.collection_select :product_length_id, ProductLength.order(:name), :id, :name, include_blank: true %>  
 
   <%= f.label :product_width_id %>
-  <%= f.collection_select :product_width_id, ProductWidth.order(:name), :id, :name %>  
+  <%= f.collection_select :product_width_id, ProductWidth.order(:name), :id, :name, include_blank: true %>  
 
   <%= f.label :product_warranty_id %>
-  <%= f.collection_select :product_warranty_id, ProductWarranty.order(:name), :id, :name %>  
+  <%= f.collection_select :product_warranty_id, ProductWarranty.order(:name), :id, :name, include_blank: true %>  
 
   <%= f.label :color_id %>
-  <%= f.grouped_collection_select(:color_id, ColorPalette.order(:name), :colors, :formal_name, :id, :name) %>
+  <%= f.grouped_collection_select(:color_id, ColorPalette.order(:name), :colors, :formal_name, :id, :name, include_blank: true) %>
 
   <%= f.label :sku %>
   <%= f.text_field :sku %>
