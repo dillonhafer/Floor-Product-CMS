@@ -23,6 +23,7 @@ after "deploy", "deploy:cleanup"
 
 after "deploy:update_code" do  
   run "ln -s #{shared_path}/database.yml #{release_path}/config/database.yml"
+  run "ln -s #{shared_path}/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
   run "rm -rf /home6/boondoc7/public_html/dev-johnsonite"
   run "ln -s #{release_path}/public /home6/boondoc7/public_html/dev-johnsonite"
   run "cd #{release_path} ; RAILS_ENV=production bundle exec rake assets:precompile --trace"
