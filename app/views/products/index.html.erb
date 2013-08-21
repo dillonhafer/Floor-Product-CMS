@@ -5,23 +5,30 @@
 
 <h4><%= @products.count %> Products</h4>
 
-<%= form_for :search, url: product_search_path, id: "productSearchForm" do |f| %>    
+<%= form_for @product_family, url: product_search_path, method: 'get', id: "productSearchForm" do |f| %>    
   <div class='row'>
-    <div class='twelve columns'>
+    <div class='large-9 columns'>
       <%= field_set_tag do %>
-        <%= f.grouped_collection_select(:product_family_id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
-        <%= submit_tag 'search', class: "small blue button nice round" %> 
-        <%= link_to "advanced", '', :class => 'white round button nice radius small', :id => 'advancedSearch' %>        
+        <%= f.label :id, "Search by Product Family" %>
+        <%= f.grouped_collection_select(:id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
+      <% end %>
+    </div>  
+    <div class='large-3 columns'>
+      <%= field_set_tag do %>
+        <%= label_tag :show_per_page %>
+        <%= select_tag :show_per_page, options_for_select([ [10], [20], [50] ], @show_per_page) %>
       <% end %>
     </div>  
   </div>
+  <%= submit_tag 'search', class: "small blue button nice round" %> 
+  <%#= link_to "advanced", '', :class => 'white round button nice radius small', :id => 'advancedSearch' %>        
 <% end %>
 
 <div class="pagination-container">
   <%= will_paginate(@products,:renderer => PaginationListLinkRenderer, :previous_label => "«", :next_label => "»" ) %>
 </div>
 
-<h4><%= @family_name %></h4>
+<h4><%=  %></h4>
 <table>
   <thead>
     <tr>

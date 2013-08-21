@@ -1,12 +1,15 @@
 class ProductsController < ApplicationController
   before_filter :require_admin
 
-  def index    
-    @show_on_page = params[:show_on_page] ||= 16
-    id = params.has_key?(:search) ? params[:search][:product_family_id] : 26
-
-    @family_name = ProductFamily.find(id).name
-    @products = Product.where(product_family_id: id).paginate(page: params[:page], per_page: params[:show_on_page])
+  def index        
+    @show_per_page = params[:show_per_page] ||= 20
+    if params.has_key? :product_family
+      @product_family = ProductFamily.find(params[:product_family][:id])      
+    else
+      @product_family = ProductFamily.order(:name).first      
+    end
+   
+    @products = Product.where(product_family_id: @product_family.id).paginate(page: params[:page], per_page: params[:show_per_page])
   end
 
   def new
