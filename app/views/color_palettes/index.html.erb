@@ -3,7 +3,7 @@
 
 <%= link_to_icon 'plus-sign icon-white', "New Color Palette", new_color_palette_path, class: 'small green button nice radius' %>
 
-<%= select_tag :color_palette, option_groups_from_collection_for_select( @color_palettes.map { |cp| ["#{cp.name} (#{cp.colors.count})", cp.name] } ), id: 'palette-select', prompt: 'Select a palette' %>
+<%= select_tag :color_palette, options_for_select( @color_palettes.map { |cp| ["#{cp.name} (#{cp.colors.count})", cp.name] } ), id: 'palette-select', prompt: 'Select a palette' %>
 
 <div class="section-container tabs" data-section>
 <% @color_palettes.each do |color_palette| %>  
