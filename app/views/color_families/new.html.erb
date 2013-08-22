@@ -4,5 +4,6 @@
   
   <%= render partial: 'form', locals: {f: f} %>
   
-  <%= f.submit "Create", class: 'nice button radius' %>
+  <%= f.submit "Create Color Family", class: 'small blue button radius' %>
+  <%= link_to "Cancel", color_families_path, class: 'small red nice button radius' %>
 <% end %>
