@@ -17,5 +17,10 @@ describe ProductLength do
       product_length.name = nil
       product_length.valid?.should be_false
     end
+
+    it "is unique" do
+      new_product_length = ProductLength.new(name: product_length.name)
+      new_product_length.valid?.should be_false
+    end
   end
 end

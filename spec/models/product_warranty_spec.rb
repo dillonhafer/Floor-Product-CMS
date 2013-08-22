@@ -17,5 +17,10 @@ describe ProductWarranty do
       product_warranty.name = nil
       product_warranty.valid?.should be_false
     end
+
+    it "is unique" do
+      new_product_warranty = ProductWarranty.new(name: product_warranty.name)
+      new_product_warranty.valid?.should be_false
+    end
   end
 end

@@ -17,5 +17,10 @@ describe ProductWidth do
       product_width.name = nil
       product_width.valid?.should be_false
     end
+
+    it "is unique" do
+      new_product_width = ProductWidth.new(name: product_width.name)
+      new_product_width.valid?.should be_false
+    end
   end
 end

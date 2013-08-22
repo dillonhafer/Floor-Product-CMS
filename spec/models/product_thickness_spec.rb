@@ -17,5 +17,10 @@ describe ProductThickness do
       product_thickness.name = nil
       product_thickness.valid?.should be_false
     end
+
+    it "is unique" do
+      new_product_thickness = ProductThickness.new(name: product_thickness.name)
+      new_product_thickness.valid?.should be_false
+    end
   end
 end
