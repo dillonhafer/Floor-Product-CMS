@@ -4,5 +4,6 @@
 
   <%= render partial: 'form', locals: {f: f} %>
   
-  <%= f.submit "Update", class: 'nice button radius' %>
+  <%= f.submit "Update", class: 'small blue nice button radius' %>
+  <%= link_to "Cancel", product_widths_path, class: 'small red nice button radius' %>
 <% end %>
