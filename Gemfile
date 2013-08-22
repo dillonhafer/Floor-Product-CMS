@@ -40,7 +40,11 @@ gem 'dynamic_form'
 gem 'will_paginate'
 
 group :test do
-  gem 'rspec-rails', '2.13.1'  
+  gem 'factory_girl'
+  gem 'rspec-rails', '2.13.1'
   gem 'selenium-webdriver', '2.0.0'
   gem 'capybara', '2.1.0'
+  gem 'guard-rspec', '2.5.0'
+  gem 'growl', '1.0.3'
+  gem 'terminal-notifier-guard'
 end
