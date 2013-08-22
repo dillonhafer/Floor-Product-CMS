@@ -5,8 +5,8 @@ class ColorPalette < ActiveRecord::Base
   has_many :profile_color_palettes, dependent: :destroy
   has_many :profiles, through: :profile_color_palettes, dependent: :destroy
 
-  scope :ordered, order(:order_number)
-  scope :labels, order(:id).limit(6)
+  scope :ordered, -> {order(:order_number)}
+  scope :labels,  -> {order(:id).limit(6)}
 
   def css_class
     "color-palette-#{name.gsub(' ', '-').downcase}"

@@ -19,4 +19,12 @@ namespace :spec do
     #  end
     #end    
   end
+
+  desc "Setup test database - drops, loads schema, migrates and seeds the test db"
+  task :db do
+    Rails.env = ENV['RAILS_ENV'] = 'test'
+    Rake::Task['db:drop'].invoke
+    Rake::Task['db:create'].invoke
+    Rake::Task['db:migrate'].invoke
+  end
 end
