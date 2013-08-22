@@ -27,4 +27,8 @@ module ApplicationHelper
   def link_to_icon(icon, name, path, options={})
     link_to("<i class='icon icon-#{icon}'></i> #{name}".html_safe, path, options)
   end
+
+  def beta_tag    
+    "<div id='beta-tag'>BETA<br /><small>v #{BETA_VERSION}</small></div>".html_safe
+  end
 end
