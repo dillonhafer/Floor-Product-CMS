@@ -40,6 +40,7 @@ gem 'dynamic_form'
 gem 'will_paginate'
 
 group :test do
-  gem 'rspec-rails'
-  gem 'watchr'
+  gem 'rspec-rails', '2.13.1'  
+  gem 'selenium-webdriver', '2.0.0'
+  gem 'capybara', '2.1.0'
 end
