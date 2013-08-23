@@ -13,7 +13,9 @@ class WallbaseProfile < ActiveRecord::Base
   end
 
   def related_products
-    self.wallbase_collection.wallbase_style_types.where("wallbase_style_types.id != ?", wallbase_style_type.id).order('random()').limit(5)
+    self.wallbase_collection.wallbase_style_types
+      .where("wallbase_style_types.id != ?", wallbase_style_type.id)
+      .order('random()').limit(5)
   end
 
   def color_palette_width_in_percent

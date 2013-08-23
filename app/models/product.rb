@@ -1,5 +1,12 @@
 class Product < ActiveRecord::Base
-  validates_presence_of :sku
+  validates_presence_of :sku,
+    :product_family,    
+    :product_length,
+    :product_width,
+    :product_thickness,
+    :product_warranty,
+    :color
+
   belongs_to :product_family
   belongs_to :product_category
   belongs_to :product_length
