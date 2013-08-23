@@ -24,6 +24,10 @@ module ApplicationHelper
     "current-nav" if controller == params[:controller]
   end
 
+  def current_icon?(controller, name)
+    controller == params[:controller] ? "#{name} icon-white" : name
+  end
+
   def link_to_icon(icon, name, path, options={})
     link_to("<i class='icon icon-#{icon}'></i> #{name}".html_safe, path, options)
   end
