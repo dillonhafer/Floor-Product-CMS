@@ -10,17 +10,17 @@ describe ColorFamily do
     end
 
     it "is valid" do
-      color_family.valid?.should be_true
+      color_family.should be_valid
     end
 
     it "fails without a name" do
       color_family.name = nil
-      color_family.valid?.should be_false
+      color_family.should_not be_valid
     end
 
     it "is unique" do
       new_color_family = ColorFamily.new(name: color_family.name)
-      new_color_family.valid?.should be_false
+      new_color_family.should_not be_valid
     end
   end
 end
