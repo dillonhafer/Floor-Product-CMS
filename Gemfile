@@ -42,6 +42,7 @@ gem 'will_paginate'
 group :test do
   gem 'factory_girl'
   gem 'rspec-rails', '2.13.1'
+  gem 'shoulda-matchers'
   gem 'selenium-webdriver', '2.0.0'
   gem 'capybara', '2.1.0'
   gem 'guard-rspec', '2.5.0'

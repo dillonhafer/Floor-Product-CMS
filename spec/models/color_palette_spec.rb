@@ -3,16 +3,12 @@ require 'spec_helper'
 describe ColorPalette do
 
   let(:color_palette) { FactoryGirl.create(:color_palette) }
+  subject { color_palette }
 
   describe "validations" do
-    it "can be instantiated" do
-      color_palette.should be_an_instance_of(ColorPalette)
-    end
-
-    it "is valid" do
-      color_palette.should be_valid
-    end
-
+    it { should be_an_instance_of(ColorPalette) }
+    it { should be_valid }
+      
     it "fails without a name" do
       color_palette.name = nil
       color_palette.should_not be_valid
