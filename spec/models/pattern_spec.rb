@@ -3,24 +3,12 @@ require 'spec_helper'
 describe Pattern do
 
   let(:pattern) { FactoryGirl.create(:pattern) }
+  subject { pattern }
 
   describe "validations" do
-    it "can be instantiated" do
-      pattern.should be_an_instance_of(Pattern)
-    end
-
-    it "is valid" do
-      pattern.valid?.should be_true
-    end
-
-    it "fails without a name" do
-      pattern.name = nil
-      pattern.valid?.should be_false
-    end
-
-    it "is unique" do
-      new_pattern = Pattern.new(name: pattern.name)
-      new_pattern.valid?.should be_false
-    end
+    it { should be_an_instance_of(Pattern) }
+    it { should be_valid }
+    it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
   end
 end
