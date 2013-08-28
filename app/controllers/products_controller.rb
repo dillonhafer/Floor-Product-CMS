@@ -9,7 +9,11 @@ class ProductsController < ApplicationController
       @product_family = ProductFamily.order(:name).first      
     end
    
-    @products = Product.where(product_family_id: @product_family.id).paginate(page: params[:page], per_page: params[:show_per_page])
+    @products = Product.where(product_family_id: @product_family.id)
+                       .paginate(
+                         page: params[:page],
+                         per_page: params[:show_per_page]
+                       )
   end
 
   def new
@@ -45,6 +49,13 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:sku,:product_family_id,:product_thickness_id,:product_length_id,:product_width_id,:product_warranty_id,:color_id)
+    params.require(:product).permit(:sku,
+                                    :product_family_id,
+                                    :product_thickness_id,
+                                    :product_length_id,
+                                    :product_width_id,
+                                    :product_warranty_id,
+                                    :color_id
+                                    )
   end
 end
