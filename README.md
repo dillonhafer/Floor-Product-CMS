@@ -28,3 +28,8 @@ Code climate: [![Code Climate](https://codeclimate.com/repos/5214f390f3ea0049ba0
 [![Boondock Walker](http://www.boondockwalker.com/bw-logo.png)](http://www.boondockwalker.com)
 
 Johnsonite Product Manager is maintained by [Boondock Walker](http://www.boondockwalker.com)
+
+## License
+---
+
+Johnsonite Product Manager is Copyright © 2013 Dillon Hafer and Boondock Walker, LLC. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
