@@ -8,20 +8,8 @@ describe ColorPalette do
   describe "validations" do
     it { should be_an_instance_of(ColorPalette) }
     it { should be_valid }
-      
-    it "fails without a name" do
-      color_palette.name = nil
-      color_palette.should_not be_valid
-    end
-
-    it "fails without an order number" do
-      color_palette.order_number = nil
-      color_palette.should_not be_valid
-    end
-
-    it "is unique" do
-      new_color_palette = ColorPalette.new(name: color_palette.name)
-      new_color_palette.should_not be_valid
-    end
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:order_number) }
+    it { should validate_uniqueness_of(:name) }
   end
 end
