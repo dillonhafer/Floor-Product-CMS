@@ -8,16 +8,27 @@ class ProductsController < ApplicationController
     else
       @product_family = ProductFamily.order(:name).first      
     end
-   
-    @products = Product.where(product_family_id: @product_family.id)
-                       .paginate(
-                         page: params[:page],
-                         per_page: params[:show_per_page]
-                       )
+    
+    @filter = ["product_family_id = ?", @product_family.id]
+    @select_constraints = %w{product_thickness_id product_length_id product_width_id product_warranty_id}
+    @constraints = %w{weldrod sku}.concat @select_constraints
+    
+    @constraints.each do |c|
+      unless params[c].blank?
+        @filter[0] += " AND #{c} LIKE ?"
+        @filter.push "#{params[c]}"
+      end
+    end
+    
+    @products = Product.where(@filter).order(:sku).paginate(page: params[:page],per_page: params[:show_per_page])
   end
 
   def new
     @product = Product.new
+  end
+
+  def show
+    @product = Product.find params[:id]
   end
 
   def create

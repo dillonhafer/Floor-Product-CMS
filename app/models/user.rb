@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  self.table_name = 'joh_users'
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,  
   devise :database_authenticatable, :registerable,

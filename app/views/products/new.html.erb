@@ -21,8 +21,18 @@
   <%= f.label :color_id %>
   <%= f.grouped_collection_select(:color_id, ColorPalette.order(:name), :colors, :formal_name, :id, :name, include_blank: true) %>
 
+  <%= f.label :coordinating_color_id, "Coordinating Color" %>
+  <%= f.grouped_collection_select(:coordinating_color_id, ColorPalette.order(:name), :colors, :formal_name, :id, :name, include_blank: true) %>
+
+  <%= f.label :wallbase_profile_id %>
+  <%= f.collection_select(:wallbase_profile_id, ProductCategory.find(20).products.order(:sku), :id, :sku, include_blank: true) %>
+
+  <%= f.label :weldrod %>
+  <%= f.text_field :weldrod %>
+
   <%= f.label :sku %>
   <%= f.text_field :sku %>
+
   <%= f.submit "Create Product", class: 'small green nice button radius' %>
   <%= link_to "Cancel", products_path, class: 'small red nice button radius' %>
 <% end %>

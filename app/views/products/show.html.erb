@@ -1,0 +1,28 @@
+<h3 class="subheader">Product <%= @product.sku %></h3>
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th>Family</th><th>SKU</th><th colspan="2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>    
+    <tr class="product-row">
+      <td><%= @product.product_family.name if @product.product_family %></td><td><%= @product.sku %></td><td><%= link_to_icon 'edit icon-white', 'Edit', edit_product_path(p), class: 'small blue button radius' %> <%= link_to_icon 'trash icon-white', 'Delete', product_path(p), method: :delete, data: {confirm: '1'}, class: 'small red button nice radius' %></td><td><a class="product-details-link" href="javascript:void(0)"><i class="icon icon-info-sign"></i></a></td>
+    </tr>
+    <tr class='product-details'>
+      <td colspan='4'>
+        <ul class='large-block-grid-4 small-block-grid-1'>
+          <li>Length: <%= @product.length %></li>
+          <li>Width: <%= @product.width %></li>
+          <li>Thickness: <%= @product.thickness %></li>
+          <li>Warranty: <%= @product.warranty %></li>
+          <li>Color: <%= @product.color.name if @product.color %></li>
+          <li>Weldrod: <%= @product.weldrod %></li>
+          <li>Coordinating Wallbase: <%= link_to @product.wallbase_profile_id, product_path(@product.wallbase_profile_id) %></li>
+        </ul>
+      </td>
+    </tr>    
+  </tbody>
+</table>
