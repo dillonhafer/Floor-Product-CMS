@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/Desarrollo-CeSPI/activerecord-sqlserver-adapter
+  remote: git://github.com/Desarrollo-CeSPI/activerecord-sqlserver-adapter.git
   revision: b606c5c3a3dd8954805d5ab74af8a443400927d6
   specs:
     activerecord-sqlserver-adapter (3.2.12)
