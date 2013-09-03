@@ -6,7 +6,7 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem 'tiny_tds'
-gem 'activerecord-sqlserver-adapter', git: 'git://github.com/Desarrollo-CeSPI/activerecord-sqlserver-adapter'
+gem 'activerecord-sqlserver-adapter', git: 'git://github.com/Desarrollo-CeSPI/activerecord-sqlserver-adapter.git'
 
 # Authentication
 gem 'devise'
