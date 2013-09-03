@@ -3,24 +3,12 @@ require 'spec_helper'
 describe ProductWarranty do
 
   let(:product_warranty) { FactoryGirl.create(:product_warranty) }
+  subject { product_warranty }
 
   describe "validations" do
-    it "can be instantiated" do
-      product_warranty.should be_an_instance_of(ProductWarranty)
-    end
-
-    it "is valid" do
-      product_warranty.valid?.should be_true
-    end
-
-    it "fails without a name" do
-      product_warranty.name = nil
-      product_warranty.valid?.should be_false
-    end
-
-    it "is unique" do
-      new_product_warranty = ProductWarranty.new(name: product_warranty.name)
-      new_product_warranty.valid?.should be_false
-    end
+    it { should be_an_instance_of(ProductWarranty) }
+    it { should be_valid }
+    it { should validate_presence_of(:name) }
+    it { should validate_uniqueness_of(:name) }
   end
 end
