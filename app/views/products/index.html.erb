@@ -11,7 +11,7 @@
         <%= f.grouped_collection_select(:id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
         
         <% @select_constraints.each do |c| %>
-          <div class='filter-div hide' id='filter_<%= c %>'>
+          <div class='filter-div <%= hide_filter(c) %>' id='filter_<%= c %>'>
             <div class='row'>
               <div class='large-10 columns'>
                 <%= label_tag c %>
@@ -55,12 +55,12 @@
       <%= select_tag :show_per_page, options_for_select([ [10], [20], [50] ], @show_per_page) %>
       <a id="add-filter-list" href="javascript:void(0)" class='green button radius small full-width'>Add a filter</a>
       <ul id="filter-list" class='hide full-width'>
-        <li><a data-field='filter_product_thickness_id' class='add-filter'>Thickness</a></li>
-        <li><a data-field='filter_product_width_id' class='add-filter'>Width</a></li>
-        <li><a data-field='filter_product_length_id' class='add-filter'>Length</a></li>
-        <li><a data-field='filter_product_warranty_id' class='add-filter'>Warranty</a></li>
-        <li><a data-field='filter_weldrod' class='add-filter'>Weldrod</a></li>
-        <li><a data-field='filter_sku' class='add-filter'>Sku</a></li>
+        <li class='<%= show_filter('product_thickness_id') %>'><a data-field='filter_product_thickness_id' class='add-filter'>Thickness</a></li>
+        <li class='<%= show_filter('product_width_id') %>'><a data-field='filter_product_width_id' class='add-filter'>Width</a></li>
+        <li class='<%= show_filter('product_length_id') %>'><a data-field='filter_product_length_id' class='add-filter'>Length</a></li>
+        <li class='<%= show_filter('product_warranty_id') %>'><a data-field='filter_product_warranty_id' class='add-filter'>Warranty</a></li>
+        <li class='<%= show_filter('weldrod') %>'><a data-field='filter_weldrod' class='add-filter'>Weldrod</a></li>
+        <li class='<%= show_filter('sku') %>'><a data-field='filter_sku' class='add-filter'>Sku</a></li>
       </ul>
     </div>  
   </div>
@@ -87,7 +87,7 @@
     <tr class="product-row">
       <td><%= p.product_family.name if p.product_family %></td><td><%= link_to p.sku, product_path(p) %></td><td><%= link_to_icon 'edit icon-white', 'Edit', edit_product_path(p), class: 'small blue button radius' %> <%= link_to_icon 'trash icon-white', 'Delete', product_path(p), method: :delete, data: {confirm: '1'}, class: 'small red button nice radius' %></td><td><a class="product-details-link" href="javascript:void(0)"><i class="icon icon-info-sign"></i></a></td>
     </tr>
-    <tr class='hidef product-details'>
+    <tr class='hide product-details'>
       <td colspan='4'>
         <ul class='large-block-grid-4 small-block-grid-1'>
           <li>Length: <%= p.length %></li>

@@ -10,6 +10,12 @@ describe Product do
     it { should be_valid }
     it { should validate_presence_of(:product_family_id) }
     it { should validate_presence_of(:product_length_id) }
+    it { should validate_presence_of(:product_thickness_id) }
+    it { should validate_presence_of(:product_width_id) }
+    it { should validate_presence_of(:product_warranty_id) }
+    it { should validate_presence_of(:weldrod) }
+    it { should validate_presence_of(:sku) }
+    it { should validate_presence_of(:color_id) }
     it { should validate_uniqueness_of(:sku) }
   end
 end

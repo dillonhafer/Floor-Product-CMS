@@ -26,18 +26,15 @@ function stopSpinner() {
 
   $(document).on('click', '.remove-filter', function() {
     var fid=$(this).parent().parent().parent().attr('id')
-    console.log(fid)
     $(this).parent().parent().find('select').val('')
     $(this).parent().parent().find('input').val('')
     $(this).parent().parent().parent().fadeOut();
     var name = 'a[data-field="'+fid+'"]'
     $(name).parent().fadeIn();
-    console.log(name)
   })
 
   $(document).on('click', '.add-filter', function() {
     var fid=$(this).data('field')
-    console.log(fid)
     $('#'+fid).fadeIn();
     $(this).parent().fadeOut();
     $(this).parent().parent().slideUp();
@@ -50,6 +47,12 @@ function stopSpinner() {
   $(document).on('mouseleave', '#filter-list', function() {    
     $('#filter-list').slideUp();
   })
+
+
+  $(document).on('click', 'a.product-details-link', function() {        
+    $(this).parent().parent().next('tr').fadeToggle('fast');    
+  });  
+
 
 $(document).ready(function() {
 if ($('.alert-box.notice').length) {

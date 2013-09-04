@@ -13,7 +13,8 @@ class Product < ActiveRecord::Base
     :product_width_id,
     :product_thickness_id,
     :product_warranty_id,
-    :color_id
+    :color_id,
+    :weldrod
 
   validates_uniqueness_of :sku
 

@@ -16,7 +16,7 @@ JohnsoniteCom::Application.routes.draw do
     resources :wallbase_collections, path: 'wallbase-collections'
 
     # Products
-    post '/products' => 'products#index', as: 'product_search'    
+    match '/product-search' => 'products#index', as: 'product_search', via: ['get', 'put']
     resources :products
     resources :product_widths, path: 'product-widths'
     resources :product_lengths, path: 'product-lengths'

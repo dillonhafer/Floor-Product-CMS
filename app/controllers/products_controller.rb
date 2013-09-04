@@ -11,12 +11,19 @@ class ProductsController < ApplicationController
     
     @filter = ["product_family_id = ?", @product_family.id]
     @select_constraints = %w{product_thickness_id product_length_id product_width_id product_warranty_id}
-    @constraints = %w{weldrod sku}.concat @select_constraints
+    @constraints = %w{weldrod sku}
     
     @constraints.each do |c|
       unless params[c].blank?
         @filter[0] += " AND #{c} LIKE ?"
         @filter.push "#{params[c]}"
+      end
+    end
+
+    @select_constraints.each do |c|
+      unless params[c].blank?
+        @filter[0] += " AND #{c} = ?"
+        @filter.push params[c].to_i
       end
     end
     
@@ -66,7 +73,9 @@ class ProductsController < ApplicationController
                                     :product_length_id,
                                     :product_width_id,
                                     :product_warranty_id,
-                                    :color_id
+                                    :color_id,
+                                    :weldrod,
+                                    :coordinating_color_id
                                     )
   end
 end
