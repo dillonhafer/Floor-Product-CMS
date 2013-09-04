@@ -14,7 +14,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, :git
-set :repository, "git@git.boondockwalker.com:johnsonite/johnsonite-ruby.git"
+set :repository, "git@github.com:thealtair/Floor-Product-CMS.git"
 set :branch, "master"
 
 set :user, "floor_manager"
