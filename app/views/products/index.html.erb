@@ -11,22 +11,57 @@
         <%= f.grouped_collection_select(:id, ProductCategory.order(:name), :product_families, :name, :id, :name) %>
         
         <% @select_constraints.each do |c| %>
-          <%= label_tag c %>
-          <%= select_tag c, options_for_select(c.gsub('_id', '').split('_').map(&:capitalize!).join.constantize.all.map{|t| [t.name, t.id]}, params[:"#{c}"].to_s), include_blank: true %>
+          <div class='filter-div hide' id='filter_<%= c %>'>
+            <div class='row'>
+              <div class='large-10 columns'>
+                <%= label_tag c %>
+                <%= select_tag c, options_for_select(c.gsub('_id', '').split('_').map(&:capitalize!).join.constantize.all.map{|t| [t.name, t.id]}, params[:"#{c}"].to_s), include_blank: true %>
+              </div>
+              <div class='large-2 columns'>
+                <a href='javascript:void(0)' class='right remove-filter'><i class="icon icon-minus icon-white"></i></a>
+              </div>
+            </div>
+          </div>
         <% end %>
 
-        <%= label_tag :weldrod %>
-        <%= text_field_tag :weldrod, params[:weldrod], placeholder: 'search by weldrod' %>
+        <div class='filter-div hide' id='filter_weldrod'>
+          <div class='row'>
+            <div class='large-10 columns'>
+              <%= label_tag :weldrod %>
+              <%= text_field_tag :weldrod, params[:weldrod], placeholder: 'search by weldrod' %>
+            </div>
+            <div class='large-2 columns'>
+              <a href='javascript:void(0)' class='right remove-filter'><i class="icon icon-minus icon-white"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class='filter-div hide' id='filter_sku'>
+          <div class='row'>
+            <div class='large-10 columns'>
+              <%= label_tag :sku %>
+              <%= text_field_tag :sku, params[:sku], placeholder: 'search by sku' %>
+            </div>
+            <div class='large-2 columns'>
+              <a href='javascript:void(0)' class='right remove-filter'><i class="icon icon-minus icon-white"></i></a>
+            </div>
+          </div>
+        </div>
         
-        <%= label_tag :sku %>
-        <%= text_field_tag :sku, params[:sku], placeholder: 'search by sku' %>
       <%# end %>
     </div>  
     <div class='large-3 columns'>
-      <%#= field_set_tag do %>
-        <%= label_tag :show_per_page %>
-        <%= select_tag :show_per_page, options_for_select([ [10], [20], [50] ], @show_per_page) %>
-      <%# end %>
+      <%= label_tag :show_per_page %>
+      <%= select_tag :show_per_page, options_for_select([ [10], [20], [50] ], @show_per_page) %>
+      <a id="add-filter-list" href="javascript:void(0)" class='green button radius small full-width'>Add a filter</a>
+      <ul id="filter-list" class='hide full-width'>
+        <li><a data-field='filter_product_thickness_id' class='add-filter'>Thickness</a></li>
+        <li><a data-field='filter_product_width_id' class='add-filter'>Width</a></li>
+        <li><a data-field='filter_product_length_id' class='add-filter'>Length</a></li>
+        <li><a data-field='filter_product_warranty_id' class='add-filter'>Warranty</a></li>
+        <li><a data-field='filter_weldrod' class='add-filter'>Weldrod</a></li>
+        <li><a data-field='filter_sku' class='add-filter'>Sku</a></li>
+      </ul>
     </div>  
   </div>
     <%= submit_tag 'search', class: "small blue button nice round" %> 
