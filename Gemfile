@@ -3,8 +3,10 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
-# Use sqlite3 as the database for Active Record
+# Use pg as the database for development and test
 gem 'pg'
+
+# Use sql server (for now) as the database for production
 gem 'tiny_tds'
 gem 'activerecord-sqlserver-adapter', git: 'https://github.com/Desarrollo-CeSPI/activerecord-sqlserver-adapter.git'
 
