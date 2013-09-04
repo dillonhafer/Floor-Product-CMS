@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/Desarrollo-CeSPI/activerecord-sqlserver-adapter.git
-  revision: b606c5c3a3dd8954805d5ab74af8a443400927d6
-  specs:
-    activerecord-sqlserver-adapter (3.2.12)
-      activerecord (= 4)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -209,7 +202,6 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
-    tiny_tds (0.6.1)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -231,7 +223,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-sqlserver-adapter!
   capybara (= 2.1.0)
   coffee-rails (~> 4.0.0)
   compass-rails (~> 2.0.alpha.0)
@@ -253,7 +244,6 @@ DEPENDENCIES
   shoulda-matchers
   terminal-notifier-guard
   therubyracer
-  tiny_tds
   turbolinks
   uglifier (>= 1.3.0)
   will_paginate

@@ -1,4 +1,4 @@
-# Johnsonite Product Manager 
+# Flooring Product Manager 
 
 Code climate: [![Code Climate](https://codeclimate.com/repos/5214f390f3ea0049ba04f954/badges/aa92f547acd44399739b/gpa.png)](https://codeclimate.com/repos/5214f390f3ea0049ba04f954/feed)
 
@@ -6,28 +6,14 @@ Code climate: [![Code Climate](https://codeclimate.com/repos/5214f390f3ea0049ba0
 
 ## Ruby version >= 1.9.3 (2.0.0 prefered)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
 ## Deployment instructions
 
-* How to deploy
+* Copy and configure config/deploy.rb.example for specific use
 
 ## Credits
 
-[![Boondock Walker](http://www.boondockwalker.com/bw-logo.png)](http://www.boondockwalker.com)
-
-Johnsonite Product Manager is maintained by [Boondock Walker](http://www.boondockwalker.com)
+Flooring Product Manager is maintained by [Dillon Hafer](https://www.dillonhafer.com)
 
 ## License
 
-Johnsonite Product Manager is Copyright © 2013 Dillon Hafer and Boondock Walker, LLC. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
+Flooring Product Manager is Copyright © 2013 Dillon Hafer. It is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.

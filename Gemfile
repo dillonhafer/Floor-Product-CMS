@@ -6,10 +6,6 @@ gem 'rails', '4.0.0'
 # Use pg as the database for development and test
 gem 'pg'
 
-# Use sql server (for now) as the database for production
-gem 'tiny_tds'
-gem 'activerecord-sqlserver-adapter', git: 'https://github.com/Desarrollo-CeSPI/activerecord-sqlserver-adapter.git'
-
 # Authentication
 gem 'devise'
 gem 'omniauth'
