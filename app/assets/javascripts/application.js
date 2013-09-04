@@ -18,7 +18,21 @@
 
 $(function(){ $(document).foundation(); });
 
-$(document).bind('page:load', function() {  
+function stopSpinner() {
+  if ($('.alert-box.notice').length) {
+    $('.alert-box.notice').hide().fadeIn().delay(2000).fadeOut('fast');
+  }
+}
+
+$(document).ready(function() {
+if ($('.alert-box.notice').length) {
+    $('.alert-box.notice').hide().fadeIn().delay(2000).fadeOut('fast');
+  }
+})
+
+document.addEventListener("page:load", stopSpinner);
+
+$(document).on('page:load', function() {  
   if ($('.alert-box.notice').length) {
     $('.alert-box.notice').hide().fadeIn().delay(2000).fadeOut('fast');
   }

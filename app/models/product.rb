@@ -17,7 +17,7 @@ class Product < ActiveRecord::Base
 
   validates_uniqueness_of :sku
 
-  scope :ordered, order("sku")
+  scope :ordered, -> { order("sku") }
 
   def length
     product_length.name if product_length
