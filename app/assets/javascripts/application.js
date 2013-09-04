@@ -48,12 +48,6 @@ function stopSpinner() {
     $('#filter-list').slideUp();
   })
 
-
-  $(document).on('click', 'a.product-details-link', function() {        
-    $(this).parent().parent().next('tr').fadeToggle('fast');    
-  });  
-
-
 $(document).ready(function() {
 if ($('.alert-box.notice').length) {
     $('.alert-box.notice').hide().fadeIn().delay(2000).fadeOut('fast');
@@ -78,8 +72,5 @@ $(document).on('page:load', function() {
     });    
   });
 
-  $('a.product-details-link').on('click', function() {
-    $(this).parent().parent().next('tr').fadeToggle('fast');    
-  });
   $(document).trigger('resize');
 });

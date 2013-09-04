@@ -24,7 +24,7 @@
           </div>
         <% end %>
 
-        <div class='filter-div hide' id='filter_weldrod'>
+        <div class='filter-div <%= hide_filter('weldrod') %>' id='filter_weldrod'>
           <div class='row'>
             <div class='large-10 columns'>
               <%= label_tag :weldrod %>
@@ -36,7 +36,7 @@
           </div>
         </div>
 
-        <div class='filter-div hide' id='filter_sku'>
+        <div class='filter-div <%= hide_filter('sku') %>' id='filter_sku'>
           <div class='row'>
             <div class='large-10 columns'>
               <%= label_tag :sku %>
